@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/icon_home"
+        android:title=""
+        />
+
+    <item
+        android:id="@+id/action_write"
+        android:enabled="true"
+        android:icon="@drawable/icon_write"
+        android:title=""
+        />
+
+    <item
+        android:id="@+id/action_search"
+        android:enabled="true"
+        android:icon="@drawable/icon_search"
+        android:title=""
+        />
+
+    <item
+        android:id="@+id/action_my"
+        android:enabled="true"
+        android:icon="@drawable/icon_my"
+        android:title=""
+        />
+</menu>

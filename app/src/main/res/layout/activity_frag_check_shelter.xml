@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frag_write_user"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="소중한 작은 것들"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            scrollbars="vertical">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="추가"/>
+
+    </LinearLayout>
+
+</LinearLayout>

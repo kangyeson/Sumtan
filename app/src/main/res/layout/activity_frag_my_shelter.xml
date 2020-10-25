@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frag_my_shelter"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소중한 작은 것들"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/iv_modify"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_baseline_settings_60"
+            />
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="106dp"
+            android:layout_height="121dp"
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:id="@+id/shelter_ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#C4C4C4"/>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            >
+
+            <TextView
+                android:id="@+id/shelter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
+                android:text="용인시 동물보호센터"/>
+
+            <LinearLayout
+                android:id="@+id/lay_tele"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="연락처 : "/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="031-324-3443"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_president"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="대표자명 : "/>
+
+                <TextView
+                    android:id="@+id/tv_president"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="김박봉"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_adress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="주소"/>
+
+                <TextView
+                    android:id="@+id/tv_adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="경기도 용인시 기흥구 어찌구"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+</LinearLayout>

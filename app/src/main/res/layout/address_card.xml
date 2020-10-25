@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="600dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:weightSum="10"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:layout_gravity="center"
+    android:background="@drawable/address_card_border">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="시/도"
+            android:textSize="12sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="시/군/구"
+            android:textSize="12sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#E7E7E7"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="8">
+
+        <RadioGroup
+            android:id="@+id/address1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/seoul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="서울"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/gyeonggi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="경기"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/incheon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="인천"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/gangwon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="강원"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/daejeon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="대전"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/sejong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="세종"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/chungnam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="충남"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/chungbuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="충북"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/busan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="부산"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ulsan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="울산"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/gyeongnam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="경남"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/geyongbuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="경북"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/daegu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="대구"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/gwangju"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="경주"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/jeonllanam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="전남"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/jeollabuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="전북"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/jeju"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FF0000"
+                android:text="제주"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#E7E7E7"
+            android:layout_gravity="center"/>
+
+<!--        <fragment-->
+<!--            android:name="com.example.sample.cardlist_fragment"-->
+<!--            android:id="@+id/address_fragment_place"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="2"-->
+<!--            android:orientation="vertical"/>-->
+
+    </LinearLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#E7E7E7"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/address_card_down"
+            android:text="확인"
+            android:background="#00FF0000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
