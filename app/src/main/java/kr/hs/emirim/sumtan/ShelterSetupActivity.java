@@ -4649,12 +4649,11 @@ public class ShelterSetupActivity extends AppCompatActivity {
 
         Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address);
 
-
-        Map<String, String> userMap = new HashMap<>();
-        userMap.put("tele", shelter.getTele());
-        userMap.put("name", shelter.getName());
-        userMap.put("reprename", shelter.getPre());
-        userMap.put("address", shelter.getAddress());
+//        Map<String, String> userMap = new HashMap<>();
+//        userMap.put("tele", shelter.getTele());
+//        userMap.put("name", shelter.getName());
+//        userMap.put("reprename", shelter.getPre());
+//        userMap.put("address", shelter.getAddress());
 
         final String pre=shelter.getPre();
 

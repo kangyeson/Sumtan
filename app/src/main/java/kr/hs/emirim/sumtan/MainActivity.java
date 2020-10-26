@@ -96,21 +96,21 @@ public class MainActivity extends AppCompatActivity {
 //        sendToLogin();
 //    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser==null){
+//            sendToLogin();
+//        }else{
+//            Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser==null){
-            sendToLogin();
-        }else{
-            Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void sendToLogin() {
-        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        finish();
-    }
+//    private void sendToLogin() {
+//        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//        finish();
+//    }
 
 }

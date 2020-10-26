@@ -4,7 +4,7 @@ public class User {
     private String name;
     private String tele;
 
-    public User() {
+    public User(){
 
     }
 

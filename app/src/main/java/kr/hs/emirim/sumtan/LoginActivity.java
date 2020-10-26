@@ -3,6 +3,7 @@ package kr.hs.emirim.sumtan;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,29 +15,39 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.w3c.dom.Document;
 
 public class LoginActivity extends AppCompatActivity {
 
     FirebaseFirestore db= null;
 
+    private String user_id;
     private EditText loginEmailText;
     private EditText loginPassText;
     private Button loginBtn;
     private TextView loginRegText;
-    private String shelter_pre;
-    final static Shelter shelter=new Shelter();
+    private String shelterPre;
+    private String userName;
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
     private ProgressBar loginProgress;
+    private FirebaseUser currentUser=null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         loginRegText=(TextView)findViewById(R.id.login_reg);
         loginProgress=(ProgressBar)findViewById(R.id.login_progress);
 
+        currentUser= mAuth.getCurrentUser();
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,12 +79,13 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+                                Toast.makeText(LoginActivity.this, "로그인 성공 ", Toast.LENGTH_SHORT).show();
                                 sendToMain();
                             }else{
                                 String errorMessage=task.getException().getMessage();
                                 Toast.makeText(LoginActivity.this, "error : "+errorMessage, Toast.LENGTH_SHORT).show();
                             }
-                           loginProgress.setVisibility(View.INVISIBLE);
+                            loginProgress.setVisibility(View.INVISIBLE);
                         }
                     });
                 }
@@ -90,49 +104,78 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseUser currentUser= mAuth.getCurrentUser();
-
         if(currentUser!=null){
+            user_id=currentUser.getUid();
             sendToMain();
+
         }else{
+            Toast.makeText(LoginActivity.this,"LoginActivity = > null", Toast.LENGTH_SHORT);
 
         }
 
     }
 
     private void sendToMain() {
-        db.collection("Users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+        Toast.makeText(LoginActivity.this, "error : "+user_id+" email : "+currentUser.getEmail(), Toast.LENGTH_LONG).show();
+
+        DocumentReference docRef=db.collection("Users").document(user_id);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()){
-                    for(QueryDocumentSnapshot document:task.getResult()){
+                    DocumentSnapshot document=task.getResult();
+                    if(document.exists()){
+                        User user=document.toObject(User.class);
                         Shelter shelter=document.toObject(Shelter.class);
-                        shelter_pre=shelter.getPre();
-                        if(shelter_pre!=null){
-                            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+                        shelterPre=shelter.getPre();
+                        userName=user.getName();
+
+                        Toast.makeText(LoginActivity.this, shelterPre, Toast.LENGTH_SHORT).show();
+                        if(shelterPre!=null){
+                            //Toast.makeText(LoginActivity.this, shelterPre, Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity_shelter.class));
                             finish();
-                        }else{
-                            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+                        }else if(userName!=null){
+                           Toast.makeText(LoginActivity.this, userName, Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         }
+                    }else{
+                        Log.d("LoginActivity => ", "No such document");
                     }
+                }else{
+
                 }
             }
         });
 
-
-
-//        if(shelter_pre==null) {
-//            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
-//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//            finish();
-//        }else if(shelter_pre!=null){
-//            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+//        db.collection("Users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//            @Override
+//            public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                UserInfo userInfo=documentSnapshot.toObject(UserInfo.class);
+//                Toast.makeText(LoginActivity.this, userInfo.getUserName(), Toast.LENGTH_LONG).show();
 //
-//            startActivity(new Intent(LoginActivity.this, MainActivity_shelter.class));
-//            finish();
-//        }
+//            }
+//        });
+
+//        db.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                if(task.isSuccessful()){
+//                    DocumentSnapshot document=task.getResult();
+//                    if(document.exists()){
+//                        Toast.makeText(LoginActivity.this, "data : " +  document.getData(), Toast.LENGTH_LONG).show();
+//
+//                        Log.d("LOGINActivity => ", "data : "+document.getData());
+//                    }else{
+//                        Log.d("LOGINActivity=>", "No such document");
+//                    }
+//                }else{
+//                    Log.d("LOGINActivity => ", "get failed with ", task.getException());
+//                }
+//            }
+//        });
+
     }
 }
