@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -62,14 +61,14 @@ public class UserSetupActivity extends AppCompatActivity {
     private void adduser() {
         FirebaseFirestore db=FirebaseFirestore.getInstance();
 
-        User user=new User(user_name, user_tele);
+        User user=new User(user_name, user_email);
 
         Map<String, String> userMap=new HashMap<>();
         userMap.put("email", user_email);
         userMap.put("name", user.getName());
         userMap.put("tele", user.getTele());
 
-        db.collection("Users").document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        db.collection("Users").document(user_id).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

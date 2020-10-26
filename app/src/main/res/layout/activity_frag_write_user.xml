@@ -61,21 +61,12 @@
                     android:layout_gravity="center_vertical"
                     >
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:textSize="35dp"
-                        android:hint="이름"
-                        android:background="@null"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="22dp"
-                        android:layout_marginTop="5dp"
-                        android:textSize="15dp"
-                        android:hint="성별, 나이"
                         android:background="@null"/>
 
                 </LinearLayout>
@@ -127,14 +118,14 @@
                         android:textColor="#000000"
                         />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/user_phone"
                         android:layout_width="240dp"
                         android:layout_height="35dp"
                         android:layout_gravity="end"
                         android:layout_marginLeft="12dp"
                         android:background="@drawable/introduce_box"
                         android:inputType="textLongMessage"
-                        android:hint="010-1234-0135"
                         android:padding="8dp"
                         android:textSize="14dp"
                         />

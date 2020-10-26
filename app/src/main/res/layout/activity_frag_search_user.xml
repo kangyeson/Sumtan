@@ -55,7 +55,7 @@
             android:textAlignment="textStart"
             android:textSize="18dp"
             tools:ignore="RtlCompat"
-            android:onClick="onSearchDialog"/>
+            />
 
     </LinearLayout>
 
