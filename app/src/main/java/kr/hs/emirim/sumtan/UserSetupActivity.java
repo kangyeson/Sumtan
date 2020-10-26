@@ -3,6 +3,7 @@ package kr.hs.emirim.sumtan;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,14 +61,14 @@ public class UserSetupActivity extends AppCompatActivity {
     private void adduser() {
         FirebaseFirestore db=FirebaseFirestore.getInstance();
 
-
+        User user=new User(user_name, user_email);
 
         Map<String, String> userMap=new HashMap<>();
         userMap.put("email", user_email);
-        userMap.put("name", user_name);
-        userMap.put("tele", user_tele);
+        userMap.put("name", user.getName());
+        userMap.put("tele", user.getTele());
 
-        db.collection("Users").document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        db.collection("Users").document(user_id).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
@@ -76,6 +77,7 @@ public class UserSetupActivity extends AppCompatActivity {
                 }else{
                     String error=task.getException().getMessage();
                     Toast.makeText(UserSetupActivity.this, "Firestore Error : "+error, Toast.LENGTH_SHORT).show();
+                    Log.d("에러 : ", error);
                 }
             }
         });

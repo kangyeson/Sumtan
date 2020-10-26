@@ -1,8 +1,17 @@
 package kr.hs.emirim.sumtan;
 
 public class User {
-    String name;
-    String tele;
+    private String name;
+    private String tele;
+
+    public User() {
+
+    }
+
+    public User(String name, String tele) {
+        this.name = name;
+        this.tele = tele;
+    }
 
     public String getName() {
         return name;

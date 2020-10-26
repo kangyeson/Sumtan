@@ -2,6 +2,7 @@ package kr.hs.emirim.sumtan;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -13,6 +14,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView; // 바텀 네비게이션 뷰
@@ -23,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
     private Frag_search_user fs;
     private Frag_my_user fmp;
     private FirebaseAuth mAuth;
+    FirebaseFirestore db=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+
+        db=FirebaseFirestore.getInstance();
 
         bottomNavigationView=(BottomNavigationView) findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -97,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
         if(currentUser==null){
             sendToLogin();
         }else{
+            //CollectionReference collec=db.collection("/");
+//            DocumentReference docRef = db.collection("users").document("userinfo");
+//            String pre=docRef
+            //Log.d("collection=>", String.valueOf(collec));
             Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
         }
     }

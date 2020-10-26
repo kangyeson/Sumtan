@@ -85,7 +85,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser currentUser= mAuth.getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         if(currentUser!=null){
             sendToMain();
