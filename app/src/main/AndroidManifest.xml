@@ -15,6 +15,7 @@
         <activity android:name=".ShelterSetupActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity_shelter"/>
         <activity android:name=".change_infor" />
         <activity android:name=".LoginActivity">
             <intent-filter>

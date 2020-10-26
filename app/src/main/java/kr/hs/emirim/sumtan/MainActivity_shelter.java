@@ -28,6 +28,8 @@ public class MainActivity_shelter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_shelter);
 
+        mAuth = FirebaseAuth.getInstance();
+
         bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNa);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

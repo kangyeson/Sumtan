@@ -38,6 +38,13 @@
                 android:text="@string/delete_user"
                 android:textSize="20sp"/>
 
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:textSize="20sp"/>
+
         </LinearLayout>
 
     </LinearLayout>

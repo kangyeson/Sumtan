@@ -20,15 +20,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity {
+
+    FirebaseFirestore db= null;
 
     private EditText loginEmailText;
     private EditText loginPassText;
     private Button loginBtn;
     private TextView loginRegText;
     private String shelter_pre;
-
+    final static Shelter shelter=new Shelter();
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private ProgressBar loginProgress;
@@ -39,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth=FirebaseAuth.getInstance();
+        db= FirebaseFirestore.getInstance();
 
         loginEmailText=(EditText) findViewById(R.id.login_email);
         loginPassText=(EditText) findViewById(R.id.login_password);
@@ -88,12 +94,45 @@ public class LoginActivity extends AppCompatActivity {
 
         if(currentUser!=null){
             sendToMain();
+        }else{
+
         }
 
     }
 
     private void sendToMain() {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        finish();
+        db.collection("Users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot document:task.getResult()){
+                        Shelter shelter=document.toObject(Shelter.class);
+                        shelter_pre=shelter.getPre();
+                        if(shelter_pre!=null){
+                            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(LoginActivity.this, MainActivity_shelter.class));
+                            finish();
+                        }else{
+                            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+//        if(shelter_pre==null) {
+//            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//            finish();
+//        }else if(shelter_pre!=null){
+//            Toast.makeText(LoginActivity.this, "pre : "+shelter_pre, Toast.LENGTH_LONG).show();
+//
+//            startActivity(new Intent(LoginActivity.this, MainActivity_shelter.class));
+//            finish();
+//        }
     }
 }

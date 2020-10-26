@@ -104,10 +104,6 @@ public class MainActivity extends AppCompatActivity {
         if(currentUser==null){
             sendToLogin();
         }else{
-            //CollectionReference collec=db.collection("/");
-//            DocumentReference docRef = db.collection("users").document("userinfo");
-//            String pre=docRef
-            //Log.d("collection=>", String.valueOf(collec));
             Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
         }
     }
