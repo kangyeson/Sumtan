@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".NewPostActivity">
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -92,7 +91,8 @@
                         android:textColor="#000000"
                         />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/user_email"
                         android:layout_width="240dp"
                         android:layout_height="35dp"
                         android:layout_gravity="end"
@@ -119,7 +119,7 @@
                         />
 
                     <EditText
-                        android:id="@+id/user_phone"
+                        android:id="@+id/user_tele"
                         android:layout_width="240dp"
                         android:layout_height="35dp"
                         android:layout_gravity="end"

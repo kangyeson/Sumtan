@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(LoginActivity.this, MainActivity_shelter.class));
                             finish();
                         }else if(userName!=null){
-                           Toast.makeText(LoginActivity.this, userName, Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, userName, Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         }

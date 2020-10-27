@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Frag_search_user fs;
     private Frag_my_user fmp;
     private FirebaseAuth mAuth;
-    FirebaseFirestore db=null;
+    FirebaseFirestore db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
 
-        db=FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
 
-        bottomNavigationView=(BottomNavigationView) findViewById(R.id.bottomNavi);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        fh= new Frag_home_user();
-        fw= new Frag_write_user();
-        fs= new Frag_search_user();
-        fmp= new Frag_my_user();
+        fh = new Frag_home_user();
+        fw = new Frag_write_user();
+        fs = new Frag_search_user();
+        fmp = new Frag_my_user();
         setFrag(0); // 첫 프래그먼트 화면을 무엇으로 지정해줄 것인지 선택.
 
     }
@@ -90,27 +90,4 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-//    private void logOut() {
-//        mAuth.signOut();
-//        sendToLogin();
-//    }
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser==null){
-//            sendToLogin();
-//        }else{
-//            Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
-//        }
-//    }
-
-//    private void sendToLogin() {
-//        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-//        finish();
-//    }
-
 }

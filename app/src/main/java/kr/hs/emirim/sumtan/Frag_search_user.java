@@ -31,12 +31,15 @@ public class Frag_search_user extends Fragment {
             }
         });
 
-        searchbtn.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), AddressCard.class);
-            startActivity(intent);
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddressCard.class);
+                startActivity(intent);
+            }
         });
 
-//
+
         return view;
     }
 }

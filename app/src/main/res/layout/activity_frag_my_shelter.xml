@@ -45,7 +45,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_baseline_settings_60"
             />
-        
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -53,17 +53,17 @@
         android:orientation="horizontal"
         android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/shelter_ImageView"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:background="#C4C4C4"/>
+            <ImageView
+                android:id="@+id/shelter_ImageView"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:background="#C4C4C4"/>
 
-    </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,7 +145,7 @@
             </LinearLayout>
 
         </LinearLayout>
-        
+
     </LinearLayout>
 
     <Button
