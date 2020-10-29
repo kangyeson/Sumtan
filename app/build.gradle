@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "kr.hs.emirim.sumtan"
+        applicationId "kr.hs.emirim.cho.sumtan"
         minSdkVersion 16
         multiDexEnabled true
         targetSdkVersion 30

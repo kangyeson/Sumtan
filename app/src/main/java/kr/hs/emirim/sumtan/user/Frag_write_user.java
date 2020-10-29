@@ -150,7 +150,7 @@ public class Frag_write_user extends Fragment {
     }
 
     private void showResume() {
-        DocumentReference docRef=db.collection("Resume").document(currentUser.getUid());
+        DocumentReference docRef=db.collection("Resume").document(user_id);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
