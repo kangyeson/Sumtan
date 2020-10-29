@@ -94,6 +94,7 @@ public class Frag_write_user extends Fragment {
         if(currentUser!=null){
             user_id=currentUser.getUid();
             showETele();
+            showResume();
         }else{
 
         }
@@ -139,6 +140,27 @@ public class Frag_write_user extends Fragment {
                         user_name.setText(user.getName());
                         user_email.setText(currentUser.getEmail());
                         user_tele.setText(user.getTele());
+                    }else{
+                        Log.d("LoginActivity => ", "No such document");
+                    }
+                }else{
+
+                }
+            }
+        });
+    }
+
+    private void showResume() {
+        DocumentReference docRef=db.collection("Resume").document(currentUser.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()){
+                    DocumentSnapshot document=task.getResult();
+                    if(document.exists()){
+                        Resume resume=document.toObject(Resume.class);
+                        information.setText(resume.getInfo());
+                        career.setText(resume.getCareer());
                     }else{
                         Log.d("LoginActivity => ", "No such document");
                     }

@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void sendToMain() {
 
-        //Toast.makeText(LoginActivity.this, "error : "+user_id+" email : "+currentUser.getEmail(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(LoginActivity.this, "error : "+user_id, Toast.LENGTH_LONG).show();
 
         DocumentReference docRef=db.collection("Users").document(user_id);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

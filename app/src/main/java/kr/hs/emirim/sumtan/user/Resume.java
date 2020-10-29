@@ -4,6 +4,10 @@ public class Resume {
     private String info;
     private String career;
 
+    public Resume(){
+
+    }
+
     public Resume(String info, String career) {
         this.info = info;
         this.career = career;
