@@ -1,4 +1,4 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.shelter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,8 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
+import kr.hs.emirim.sumtan.R;
 
 public class ShelterSetupActivity extends AppCompatActivity {
 

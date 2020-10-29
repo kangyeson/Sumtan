@@ -1,10 +1,8 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.user;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +21,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import kr.hs.emirim.sumtan.Register.LoginActivity;
+import kr.hs.emirim.sumtan.R;
 
 public class Frag_my_user extends Fragment implements View.OnClickListener {
 

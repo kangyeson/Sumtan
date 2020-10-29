@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_shelter">
+    tools:context=".shelter.MainActivity_shelter">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNa"

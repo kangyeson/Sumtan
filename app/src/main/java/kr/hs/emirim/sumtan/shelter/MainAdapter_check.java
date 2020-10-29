@@ -1,4 +1,4 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.shelter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import kr.hs.emirim.sumtan.R;
 
 public class MainAdapter_check extends RecyclerView.Adapter<MainAdapter_check.CustomViewHolder> {
 
