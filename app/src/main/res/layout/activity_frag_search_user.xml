@@ -59,11 +59,32 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="140dp"
-        android:id="@+id/my_search_page"
-        android:orientation="vertical"/>
+        android:fillViewport="true"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/db_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </ScrollView>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/my_search_page"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="140dp"-->
+<!--        android:orientation="vertical">-->
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
 
 </RelativeLayout>

@@ -1,14 +1,18 @@
 package kr.hs.emirim.sumtan;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,10 +23,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ShelterSetupActivity extends AppCompatActivity {
+
 
     private EditText shelterTele;
     private EditText shelterName;
@@ -39,6 +45,9 @@ public class ShelterSetupActivity extends AppCompatActivity {
     private String shelter_name;
     private String shelter_pre;
     private String shelter_address;
+    private TextView courseTitle;
+    private TextView courseTele;
+    private TextView courseAddress;
 
     private FirebaseAuth firebaseAuth;
     private ArrayAdapter adapter;
@@ -49,7 +58,11 @@ public class ShelterSetupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_setup);
+        setContentView(R.layout.search_course);
 
+        courseAddress = (TextView) findViewById(R.id.courseAddress);
+        courseTele = (TextView) findViewById(R.id.courseTele);
+        courseTitle = (TextView) findViewById(R.id.courseTitle);
         firebaseAuth = FirebaseAuth.getInstance();
 
         shelterTele = (EditText) findViewById(R.id.shelterTele);
@@ -4672,5 +4685,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
+
 }

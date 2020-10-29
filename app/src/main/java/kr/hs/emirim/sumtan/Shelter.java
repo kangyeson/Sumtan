@@ -6,9 +6,11 @@ public class Shelter {
     private String pre;
     private String address;
 
-    public Shelter() {
+    public Shelter(String name, String tele, String address) {
 
     }
+
+    public Shelter() {}
 
     public Shelter(String name, String tele, String pre, String address) {
         this.name = name;

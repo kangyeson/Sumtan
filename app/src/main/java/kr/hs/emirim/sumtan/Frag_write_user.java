@@ -137,7 +137,6 @@ public class Frag_write_user extends Fragment {
                     DocumentSnapshot document=task.getResult();
                     if(document.exists()){
                         User user=document.toObject(User.class);
-
                         user_name.setText(user.getName());
                         user_email.setText(currentUser.getEmail());
                         user_tele.setText(user.getTele());
