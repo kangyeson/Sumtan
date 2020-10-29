@@ -1,34 +1,20 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.shelter;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import kr.hs.emirim.sumtan.R;
 
-public class ShelterSetupActivity extends AppCompatActivity {
-
+public class Modify_shelter extends AppCompatActivity {
 
     private EditText shelterTele;
     private EditText shelterName;
@@ -45,9 +31,6 @@ public class ShelterSetupActivity extends AppCompatActivity {
     private String shelter_name;
     private String shelter_pre;
     private String shelter_address;
-    private TextView courseTitle;
-    private TextView courseTele;
-    private TextView courseAddress;
 
     private FirebaseAuth firebaseAuth;
     private ArrayAdapter adapter;
@@ -58,11 +41,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_setup);
-        setContentView(R.layout.search_course);
 
-        courseAddress = (TextView) findViewById(R.id.courseAddress);
-        courseTele = (TextView) findViewById(R.id.courseTele);
-        courseTitle = (TextView) findViewById(R.id.courseTitle);
         firebaseAuth = FirebaseAuth.getInstance();
 
         shelterTele = (EditText) findViewById(R.id.shelterTele);
@@ -85,7 +64,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //서울시
                 if (position == 0) {
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seoul, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seoul, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -94,7 +73,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강남구
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangnam, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangnam, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -111,7 +90,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                 //강동구
                             } else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangdong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangdong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -128,7 +107,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강북구
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangbuk, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangbuk, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -145,7 +124,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강서구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangseo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangseo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -162,7 +141,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //관악구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwanak, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwanak, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -179,7 +158,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //광진구
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwangjin, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwangjin, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -196,7 +175,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //구로구
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Guro, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Guro, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -213,7 +192,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //금천구
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Geumcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Geumcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -230,7 +209,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //노원구
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nowon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nowon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -247,7 +226,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //도봉구
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dobong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dobong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -264,7 +243,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동대문구
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dongdaemun, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dongdaemun, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -281,7 +260,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동작구
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dongjak, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dongjak, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -298,7 +277,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //마포구
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Mapo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Mapo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -315,7 +294,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서대문구
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seodaemun, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seodaemun, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -332,7 +311,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서초구
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seocho, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seocho, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -349,7 +328,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //성동구
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongdong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongdong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -366,7 +345,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //성북구
                             else if (position == 16) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongbuk, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongbuk, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -383,7 +362,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //송파구
                             else if (position == 17) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Songpa, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Songpa, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -400,7 +379,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //양천구
                             else if (position == 18) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yangcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yangcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -417,7 +396,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영등포구
                             else if (position == 19) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongdeungpo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongdeungpo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -434,7 +413,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //용산구
                             else if (position == 20) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yongsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yongsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -451,7 +430,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //은평구
                             else if (position == 21) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Eunpyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Eunpyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -468,7 +447,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //종로구
                             else if (position == 22) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jongno, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jongno, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -485,7 +464,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중구
                             else if (position == 23) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jung1, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jung1, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -502,7 +481,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중랑구
                             else if (position == 24) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jungnang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jungnang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -528,7 +507,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //경기도
                 else if (position == 1) {
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeonggi, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeonggi, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -537,7 +516,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //가평군
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gapyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gapyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -553,7 +532,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                 //고양시 덕양구
                             } else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Goyang_Deogyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Goyang_Deogyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -570,7 +549,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고양시 일산동구
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.ilsandong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.ilsandong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -587,7 +566,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고양시 일산서구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.ilsanseo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.ilsanseo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -604,7 +583,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //과천시
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwacheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwacheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -621,7 +600,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //광명시
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwangmyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwangmyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -638,7 +617,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //광주시
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwangju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwangju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -655,7 +634,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //구리시
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Guri, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Guri, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -672,7 +651,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //군포시
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gunpo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gunpo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -689,7 +668,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //김포시
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gimpo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gimpo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -706,7 +685,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남양주시
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Namyangju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Namyangju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -723,7 +702,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동두천시
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dongducheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dongducheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -740,7 +719,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //부천시
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Bucheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Bucheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -757,7 +736,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //분당구
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Bundang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Bundang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -774,7 +753,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //수정구
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Sujeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Sujeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -791,7 +770,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중원구
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Jungwon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Jungwon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -808,7 +787,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //권선구
                             else if (position == 16) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Gwonseon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Gwonseon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -825,7 +804,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영통구
                             else if (position == 17) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Yeongtong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Yeongtong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -842,7 +821,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //장안구
                             else if (position == 18) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Jangan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Jangan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -859,7 +838,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //팔달구
                             else if (position == 19) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongnam_Paldal, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongnam_Paldal, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -876,7 +855,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //시흥시
                             else if (position == 20) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Siheung, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Siheung, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -893,7 +872,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //단원구
                             else if (position == 21) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ansan_Danwon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ansan_Danwon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -910,7 +889,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //상록구
                             else if (position == 22) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ansan_Sangloggu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ansan_Sangloggu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -927,7 +906,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //안성시
                             else if (position == 23) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Anseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Anseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -944,7 +923,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동안구
                             else if (position == 24) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Anyang_Dongan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Anyang_Dongan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -961,7 +940,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //만안구
                             else if (position == 25) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Anyang_Manan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Anyang_Manan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -978,7 +957,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //양주시
                             else if (position == 26) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yangju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yangju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -995,7 +974,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //양평군
                             else if (position == 27) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yangpyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yangpyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1012,7 +991,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //여주시
                             else if (position == 28) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeoju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeoju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1029,7 +1008,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //연천군
                             else if (position == 29) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeoncheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeoncheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1046,7 +1025,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //오산시
                             else if (position == 30) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Osan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Osan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1063,7 +1042,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //기흥구
                             else if (position == 31) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Giheung, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Giheung, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1080,7 +1059,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //수지구
                             else if (position == 32) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Suji, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Suji, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1097,7 +1076,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //처인구
                             else if (position == 33) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheoin, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheoin, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1114,7 +1093,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //의왕시
                             else if (position == 34) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Uiwang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Uiwang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1131,7 +1110,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //의정부시
                             else if (position == 35) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Uijeongbu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Uijeongbu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1148,7 +1127,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //이천시
                             else if (position == 36) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Icheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Icheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1165,7 +1144,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //파주시
                             else if (position == 37) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Paju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Paju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1182,7 +1161,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //평택시
                             else if (position == 38) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Pyeongtaek, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Pyeongtaek, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1199,7 +1178,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //포천시
                             else if (position == 39) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Pocheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Pocheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1216,7 +1195,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //하남시
                             else if (position == 40) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hanam, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hanam, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1233,7 +1212,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //화성시
                             else if (position == 41) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hwaseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hwaseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1259,7 +1238,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //인천
                 else if(position == 2){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Incheon, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Incheon, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1268,7 +1247,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강화군
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ganghwa, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ganghwa, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1286,7 +1265,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //계양구
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1303,7 +1282,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남동구
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Namdong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Namdong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1320,7 +1299,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dong1, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dong1, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1337,7 +1316,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //미추홀구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Michuhol, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Michuhol, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1354,7 +1333,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //부평구
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Bupyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Bupyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1371,7 +1350,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서구
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seo1, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seo1, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1388,7 +1367,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //연수구
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeonsu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeonsu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1405,7 +1384,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //옹진구
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ongjin, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ongjin, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1422,7 +1401,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중구
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jung2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jung2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1447,7 +1426,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //강원
                 else if(position == 3){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangwon, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangwon, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1456,7 +1435,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강릉시
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangneung, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangneung, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1474,7 +1453,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고성군
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Goseong1, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Goseong1, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1491,7 +1470,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동해시
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Donghae, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Donghae, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1508,7 +1487,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //삼척시
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Samcheok, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Samcheok, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1525,7 +1504,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //속초시
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sokcho, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sokcho, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1542,7 +1521,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //양구군
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yanggu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yanggu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1559,7 +1538,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //양양군
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yangyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yangyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1576,7 +1555,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영월군
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongwol, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongwol, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1593,7 +1572,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //원주시
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Wonju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Wonju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1610,7 +1589,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //인제군
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Inje, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Inje, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1627,7 +1606,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //정선군
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeongseon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeongseon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1644,7 +1623,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //철원군
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheorwon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheorwon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1661,7 +1640,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //춘천시
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Chuncheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Chuncheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1678,7 +1657,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //태백시
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Taebaek, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Taebaek, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1695,7 +1674,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //평창군
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Pyeongchang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Pyeongchang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1712,7 +1691,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //홍천군
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hongcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hongcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1729,7 +1708,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //화천군
                             else if (position == 16) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hwacheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hwacheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1746,7 +1725,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //횡성군
                             else if (position == 17) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hoengseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hoengseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1771,7 +1750,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //대전
                 else if(position == 4){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Daejeon, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Daejeon, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1780,7 +1759,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //대덕구
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Daedeok, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Daedeok, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1798,7 +1777,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동구
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dong2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dong2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1815,7 +1794,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서구
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seo2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seo2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1832,7 +1811,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //유성구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yuseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yuseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1849,7 +1828,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jung3, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jung3, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1874,7 +1853,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //세종
                 else if(position == 5){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sejong1, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sejong1, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1883,7 +1862,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //세종시
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sejong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sejong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1907,7 +1886,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //충남
                 else if(position == 6){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Chungnam, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Chungnam, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1916,7 +1895,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //계룡시
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeryong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeryong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1934,7 +1913,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //공주시
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1951,7 +1930,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //금산군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Geumsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Geumsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1968,7 +1947,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //논산시
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nonsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nonsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -1985,7 +1964,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //당진시
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dangjin, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dangjin, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2002,7 +1981,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //보령시
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Boryeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Boryeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2019,7 +1998,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //부여군
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buyeo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buyeo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2036,7 +2015,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서산시
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seosan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seosan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2053,7 +2032,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서천군
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seocheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seocheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2070,7 +2049,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //아산시
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Asan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Asan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2087,7 +2066,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //예산군
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yesan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yesan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2104,7 +2083,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동남구
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheonan_Dongnam, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheonan_Dongnam, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2121,7 +2100,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서북구
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheonan_Seobuk, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheonan_Seobuk, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2138,7 +2117,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //청양군
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheongyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheongyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2155,7 +2134,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //태안군
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Taean, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Taean, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2172,7 +2151,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //홍성군
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hongseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hongseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2197,7 +2176,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //충북
                 else if(position == 7){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Chungbuk, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Chungbuk, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -2206,7 +2185,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //괴산군
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Goesan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Goesan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2224,7 +2203,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //단양군
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Danyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Danyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2241,7 +2220,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //보은군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Boeun, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Boeun, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2258,7 +2237,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영동군
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongdong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongdong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2275,7 +2254,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //옥천군
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Okcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Okcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2292,7 +2271,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //음성군
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Eumseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Eumseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2309,7 +2288,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //제천시
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jecheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jecheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2326,7 +2305,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //증평군
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeungpyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeungpyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2343,7 +2322,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //진천군
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jincheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jincheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2360,7 +2339,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //상당구
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sangdang_Cheongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sangdang_Cheongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2377,7 +2356,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서원구
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seowon_Cheongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seowon_Cheongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2394,7 +2373,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //청원구
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheongwon_Cheongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheongwon_Cheongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2411,7 +2390,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //흥덕구
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Heungdeok_Cheongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Heungdeok_Cheongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2428,7 +2407,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //충주시
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Chungju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Chungju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2453,7 +2432,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //부산
                 else if(position == 8){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Busan, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Busan, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -2462,7 +2441,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강서구
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangseo2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangseo2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2480,7 +2459,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //금정구
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Geumjeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Geumjeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2497,7 +2476,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //기장군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gijang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gijang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2514,7 +2493,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nam1, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nam1, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2531,7 +2510,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dong3, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dong3, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2548,7 +2527,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동래구
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dongnae, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dongnae, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2565,7 +2544,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //부산직구
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Busan_direct_district, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Busan_direct_district, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2582,7 +2561,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //북구
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buk1, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buk1, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2599,7 +2578,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //사상구
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sasang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sasang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2616,7 +2595,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //사하구
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Saha, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Saha, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2633,7 +2612,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서구
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seo3, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seo3, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2650,7 +2629,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //수영구
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Suyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Suyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2667,7 +2646,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //연제구
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeonje, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeonje, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2684,7 +2663,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영도구
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongdo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongdo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2701,7 +2680,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중구
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jung4, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jung4, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2718,7 +2697,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //해운대구
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Haeundae, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Haeundae, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2743,7 +2722,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //울산
                 else if(position == 9){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ulsan, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ulsan, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -2752,7 +2731,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남구
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nam2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nam2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2770,7 +2749,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동구
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dong4, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dong4, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2787,7 +2766,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //북구
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buk2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buk2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2804,7 +2783,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //울주군
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ulju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ulju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2821,7 +2800,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jung5, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jung5, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2846,7 +2825,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //경남
                 else if(position == 10){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeongnam, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeongnam, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -2855,7 +2834,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //거제시
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Geoje, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Geoje, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2873,7 +2852,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //거창군
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Geochang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Geochang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2890,7 +2869,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고성군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Goseong2, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Goseong2, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2907,7 +2886,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //김해시
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gimhae, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gimhae, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2924,7 +2903,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남해군
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Namhae, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Namhae, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2941,7 +2920,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //밀양시
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Miryang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Miryang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2958,7 +2937,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //사천시
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sacheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sacheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2975,7 +2954,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //산청군
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sancheong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sancheong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -2992,7 +2971,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //양산시
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yangsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yangsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3009,7 +2988,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //의령군
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Uiryeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Uiryeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3026,7 +3005,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //진주시
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jinju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jinju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3043,7 +3022,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //창녕군
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Changnyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Changnyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3060,7 +3039,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //마산합포구
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Masanhappo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Masanhappo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3077,7 +3056,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //마산회원구
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Masanhoewon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Masanhoewon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3094,7 +3073,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //성산구
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3111,7 +3090,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //의창구
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Uichang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Uichang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3128,7 +3107,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //진해구
                             else if (position == 16) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jinhae, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jinhae, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3145,7 +3124,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //통영시
                             else if (position == 17) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Tongyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Tongyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3162,7 +3141,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //하동군
                             else if (position == 18) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hadong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hadong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3179,7 +3158,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //함안군
                             else if (position == 19) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Haman, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Haman, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3196,7 +3175,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //함양군
                             else if (position == 20) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hamyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hamyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3213,7 +3192,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //합천군
                             else if (position == 21) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hapcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hapcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3238,7 +3217,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //경북
                 else if(position == 11){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeongbuk, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeongbuk, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -3247,7 +3226,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //경산시
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeongsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeongsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3265,7 +3244,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //경주시
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gyeongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gyeongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3282,7 +3261,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고령군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Goryeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Goryeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3299,7 +3278,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //구미시
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gumi, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gumi, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3316,7 +3295,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //군위군
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gunwi, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gunwi, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3333,7 +3312,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //김천시
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gimcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gimcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3350,7 +3329,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //문경시
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Mungyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Mungyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3367,7 +3346,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //봉화군
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Bonghwa, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Bonghwa, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3384,7 +3363,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //상주시
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sangju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sangju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3401,7 +3380,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //성주군
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3418,7 +3397,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //안동시
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Andong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Andong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3435,7 +3414,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영덕군
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongdeok, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongdeok, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3452,7 +3431,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영양군
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3469,7 +3448,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영주시
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3486,7 +3465,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영천시
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongcheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongcheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3503,7 +3482,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //예천군
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yecheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yecheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3520,7 +3499,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //울릉군
                             else if (position == 16) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Ulleung, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Ulleung, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3537,7 +3516,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //울진군
                             else if (position == 17) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Uljin, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Uljin, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3554,7 +3533,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //의성군
                             else if (position == 18) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Uiseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Uiseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3571,7 +3550,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //청도군
                             else if (position == 19) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheongdo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheongdo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3588,7 +3567,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //청송군
                             else if (position == 20) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Cheongsong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Cheongsong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3605,7 +3584,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //칠곡군
                             else if (position == 21) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Chilgok, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Chilgok, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3622,7 +3601,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //포항시 남구
                             else if (position == 22) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nam_Pohang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nam_Pohang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3639,7 +3618,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //포항시 북구
                             else if (position == 23) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buk_Pohang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buk_Pohang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3664,7 +3643,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //대구
                 else if(position == 12){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Daegu, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Daegu, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -3673,7 +3652,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남구
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nam3, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nam3, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3691,7 +3670,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //달서구
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dalseo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dalseo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3708,7 +3687,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //달성군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dalseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dalseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3725,7 +3704,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dong5, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dong5, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3742,7 +3721,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //북구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buk3, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buk3, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3759,7 +3738,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서구
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seo4, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seo4, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3776,7 +3755,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //수성구
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Suseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Suseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3793,7 +3772,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //중구
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jung6, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jung6, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3818,7 +3797,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //광주
                 else if(position == 13){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwangju1, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwangju1, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -3827,7 +3806,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //광산구
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwangsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwangsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3845,7 +3824,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남구
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Nam4, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Nam4, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3862,7 +3841,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //동구
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Dong6, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Dong6, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3879,7 +3858,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //북구
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buk4, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buk4, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3896,7 +3875,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서구
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seo5, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seo5, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3921,7 +3900,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //전남
                 else if(position == 14){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeonnam, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeonnam, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -3930,7 +3909,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //강진군
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gangjin, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gangjin, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3948,7 +3927,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고흥군
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Goheung, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Goheung, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3965,7 +3944,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //곡성군
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gokseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gokseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3982,7 +3961,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //광양시
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gwangyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gwangyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -3999,7 +3978,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //구례군
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gurye, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gurye, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4016,7 +3995,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //나주시
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Naju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Naju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4033,7 +4012,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //담양군
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Damyang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Damyang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4050,7 +4029,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //목포시
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Mokpo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Mokpo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4067,7 +4046,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //무안군
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Muan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Muan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4084,7 +4063,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //보성군
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Boseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Boseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4101,7 +4080,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //순천시
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Suncheon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Suncheon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4118,7 +4097,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //신안군
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sinan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sinan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4135,7 +4114,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //여수시
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeosu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeosu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4152,7 +4131,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영광군
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeonggwang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeonggwang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4169,7 +4148,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //영암군
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Yeongam, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Yeongam, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4186,7 +4165,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //완도군
                             else if (position == 15) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Wando, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Wando, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4203,7 +4182,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //장성군
                             else if (position == 16) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jangseong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jangseong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4220,7 +4199,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //장흥군
                             else if (position == 17) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jangheung, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jangheung, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4237,7 +4216,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //진도군
                             else if (position == 18) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jindo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jindo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4254,7 +4233,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //함평군
                             else if (position == 19) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hampyeong, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hampyeong, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4271,7 +4250,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //해남군
                             else if (position == 20) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Haenam, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Haenam, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4288,7 +4267,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //화순군
                             else if (position == 21) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Hwasun, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Hwasun, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4313,7 +4292,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //전북
                 else if(position == 15){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeonbuk, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeonbuk, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -4322,7 +4301,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //고창군
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gochang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gochang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4340,7 +4319,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //군산시
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gunsan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gunsan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4357,7 +4336,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //김제시
                             else if (position == 2) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Gimje, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Gimje, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4374,7 +4353,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //남원시
                             else if (position == 3) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Namwon, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Namwon, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4391,7 +4370,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //무주군
                             else if (position == 4) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Muju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Muju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4408,7 +4387,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //부안군
                             else if (position == 5) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Buan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Buan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4425,7 +4404,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //순창군
                             else if (position == 6) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Sunchang, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Sunchang, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4442,7 +4421,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //완주군
                             else if (position == 7) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Wanju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Wanju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4459,7 +4438,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //익산시
                             else if (position == 8) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Iksan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Iksan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4476,7 +4455,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //임실군
                             else if (position == 9) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Imsil, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Imsil, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4493,7 +4472,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //장수군
                             else if (position == 10) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jangsu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jangsu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4510,7 +4489,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //덕진구
                             else if (position == 11) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Deokjingu, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Deokjingu, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4527,7 +4506,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //완산구
                             else if (position == 12) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Wansan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Wansan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4544,7 +4523,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //정읍시
                             else if (position == 13) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeongeup, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeongeup, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4561,7 +4540,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //진안군
                             else if (position == 14) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jinan, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jinan, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4586,7 +4565,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 //제주
                 else if(position == 16){
                     spinner2[0] = (Spinner) findViewById(R.id.shelterAddress2);
-                    adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeju1, android.R.layout.simple_spinner_dropdown_item);
+                    adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeju1, android.R.layout.simple_spinner_dropdown_item);
                     spinner2[0].setAdapter(adapter);
 
                     spinner2[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -4595,7 +4574,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //서귀포시
                             if (position == 0) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Seogwipo, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Seogwipo, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4613,7 +4592,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             //제주시
                             else if (position == 1) {
                                 spinner3[0] = (Spinner) findViewById(R.id.shelterAddress3);
-                                adapter = ArrayAdapter.createFromResource(ShelterSetupActivity.this, R.array.Jeju, android.R.layout.simple_spinner_dropdown_item);
+                                adapter = ArrayAdapter.createFromResource(Modify_shelter.this, R.array.Jeju, android.R.layout.simple_spinner_dropdown_item);
                                 spinner3[0].setAdapter(adapter);
                                 spinner3[0].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -4642,50 +4621,13 @@ public class ShelterSetupActivity extends AppCompatActivity {
 
             }
         });
-
-        setup_btn.setOnClickListener(new View.OnClickListener() {
+        Button btn_modify=(Button)findViewById(R.id.btn_modify);
+        btn_modify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shelter_tele = shelterTele.getText().toString();
-                shelter_name = shelterName.getText().toString();
-                shelter_pre = shelterPre.getText().toString();
-
-                if (!TextUtils.isEmpty(shelter_tele) && !TextUtils.isEmpty(shelter_name) && !TextUtils.isEmpty(shelter_pre)) {
-                    adduser();
-                }
-            }
-        });
-    }
-
-    private void adduser() {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address);
-
-//        Map<String, String> userMap = new HashMap<>();
-//        userMap.put("tele", shelter.getTele());
-//        userMap.put("name", shelter.getName());
-//        userMap.put("reprename", shelter.getPre());
-//        userMap.put("address", shelter.getAddress());
-
-        final String pre=shelter.getPre();
-
-        db.collection("Users").document(user_id).set(shelter).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(ShelterSetupActivity.this, "유저 정보가 등록됨", Toast.LENGTH_SHORT).show();
-                    if(pre!=null){
-                        startActivity(new Intent(ShelterSetupActivity.this, MainActivity_shelter.class));
-                        Toast.makeText(ShelterSetupActivity.this, "쉘터 메인으로! : "+pre, Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    String error = task.getException().getMessage();
-                    Toast.makeText(ShelterSetupActivity.this, "Firestore Error : " + error, Toast.LENGTH_SHORT).show();
-                }
+                finish();
             }
         });
 
     }
-
 }

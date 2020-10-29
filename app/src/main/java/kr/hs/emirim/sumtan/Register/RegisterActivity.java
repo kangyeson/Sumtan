@@ -1,4 +1,4 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.Register;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.shelter.ShelterSetupActivity;
+import kr.hs.emirim.sumtan.user.MainActivity;
+import kr.hs.emirim.sumtan.user.UserSetupActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 

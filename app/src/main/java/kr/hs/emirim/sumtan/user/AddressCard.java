@@ -1,4 +1,4 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.user;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.shelter;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Frag_home_user extends Fragment {
+import kr.hs.emirim.sumtan.R;
+
+public class Frag_home_shelter extends Fragment {
 
     private View view;
 
@@ -17,7 +19,7 @@ public class Frag_home_user extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.activity_frag_home_user,container,false);
+        view = inflater.inflate(R.layout.activity_frag_home_shelter,container,false);
 
         return view;
     }

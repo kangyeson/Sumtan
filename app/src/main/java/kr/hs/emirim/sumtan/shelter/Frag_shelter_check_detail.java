@@ -1,8 +1,10 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.shelter;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import kr.hs.emirim.sumtan.R;
 
 public class Frag_shelter_check_detail extends AppCompatActivity {
 

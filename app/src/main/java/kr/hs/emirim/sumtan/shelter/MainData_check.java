@@ -1,4 +1,4 @@
-package kr.hs.emirim.sumtan;
+package kr.hs.emirim.sumtan.shelter;
 
 public class MainData_check {
     private int iv_bookmark;
