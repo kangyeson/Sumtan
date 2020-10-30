@@ -2,11 +2,17 @@ package kr.hs.emirim.sumtan.user;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +32,7 @@ import kr.hs.emirim.sumtan.R;
 import kr.hs.emirim.sumtan.shelter.Shelter;
 
 public class Frag_search_user extends Fragment {
-
+    private String TAG = "Frag_search_user";
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView FirestoreList;
     private FirestoreRecyclerAdapter adapter;
@@ -34,12 +40,12 @@ public class Frag_search_user extends Fragment {
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser=null;
-    private String user_id;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
+
         view = inflater.inflate(R.layout.activity_frag_search_user,container,false);
         FirestoreList = (RecyclerView) view.findViewById(R.id.firestore_list);
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -47,8 +53,7 @@ public class Frag_search_user extends Fragment {
         mAuth=FirebaseAuth.getInstance();
         currentUser= mAuth.getCurrentUser();
 
-        firebaseFirestore.collection("Users").document(user_id);
-        Query query = firebaseFirestore.collection("Users");
+        Query query = firebaseFirestore.collection("Users").orderBy("pre");
         FirestoreRecyclerOptions<Shelter> options = new FirestoreRecyclerOptions.Builder<Shelter>()
                 .setQuery(query, Shelter.class)
                 .build();
@@ -74,13 +79,42 @@ public class Frag_search_user extends Fragment {
         FirestoreList.setAdapter(adapter);
 
         //검색
-        Button searchbtn = (Button)view.findViewById(R.id.search_button);
-        Button search_icon_button = (Button)view.findViewById(R.id.search_icon_button);
+        EditText SearchField = (EditText)view.findViewById(R.id.search_text);
+        Button searchbtn = (Button)view.findViewById(R.id.search_button); //지역검색
+        Button search_icon_button = (Button)view.findViewById(R.id.search_icon_button); //일반검색 아이콘
+
+        SearchField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                Log.d(TAG, "afterTextChanged");
+                Query query;
+                if(s.toString().isEmpty()){
+                    query = firebaseFirestore.collection("Users").orderBy("pre");
+                    Log.d(TAG, "is epmpty " + s.toString());
+                } else{
+                    query = firebaseFirestore.collection("Users")
+                            .whereEqualTo("name", s.toString())
+                            .orderBy("pre");
+                    Log.d(TAG, "query " + s.toString());
+                }
+                FirestoreRecyclerOptions<Shelter> options = new FirestoreRecyclerOptions.Builder<Shelter>()
+                        .setQuery(query, Shelter.class)
+                        .build();
+
+                adapter.updateOptions(options);
+            }
+        });
 
         search_icon_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-               // getFragmentManager().beginTransaction().replace(R.id.my_search_page, new Course()).commit();
+
             }
         });
 
@@ -112,13 +146,14 @@ public class Frag_search_user extends Fragment {
     @Override
     public void onStop(){
         super.onStop();
-        adapter.stopListening();
+        if(adapter != null){
+            adapter.stopListening();
+        }
     }
 
     @Override
     public void onStart(){
         super.onStart();
-        user_id=currentUser.getUid();
         adapter.startListening();
     }
 }
