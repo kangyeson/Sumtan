@@ -53,7 +53,7 @@ public class Frag_search_user extends Fragment {
         mAuth=FirebaseAuth.getInstance();
         currentUser= mAuth.getCurrentUser();
 
-        Query query = firebaseFirestore.collection("Users").orderBy("pre");
+        Query query = firebaseFirestore.collection("Users").orderBy("sname");
         FirestoreRecyclerOptions<Shelter> options = new FirestoreRecyclerOptions.Builder<Shelter>()
                 .setQuery(query, Shelter.class)
                 .build();
@@ -68,7 +68,7 @@ public class Frag_search_user extends Fragment {
 
             @Override
             protected void onBindViewHolder(@NonNull ShelterViewHolder holder, int position, @NonNull Shelter shelter) {
-                holder.courseTitle.setText(shelter.getName());
+                holder.courseTitle.setText(shelter.getSName());
                 holder.courseTele.setText(shelter.getTele());
                 holder.courseAddress.setText(shelter.getAddress());
             }
@@ -95,12 +95,13 @@ public class Frag_search_user extends Fragment {
                 Log.d(TAG, "afterTextChanged");
                 Query query;
                 if(s.toString().isEmpty()){
-                    query = firebaseFirestore.collection("Users").orderBy("pre");
+                    query = firebaseFirestore.collection("Users").orderBy("sname");
                     Log.d(TAG, "is epmpty " + s.toString());
                 } else{
                     query = firebaseFirestore.collection("Users")
-                            .whereEqualTo("name", s.toString())
-                            .orderBy("pre");
+                            .orderBy("sname")
+                            .startAt(s.toString()).endAt(s.toString()+"\uf8ff");
+
                     Log.d(TAG, "query " + s.toString());
                 }
                 FirestoreRecyclerOptions<Shelter> options = new FirestoreRecyclerOptions.Builder<Shelter>()

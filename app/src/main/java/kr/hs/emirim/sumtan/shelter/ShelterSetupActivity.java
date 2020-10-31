@@ -17,7 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import kr.hs.emirim.sumtan.R;
 
@@ -26,12 +30,6 @@ public class ShelterSetupActivity extends AppCompatActivity {
     private EditText shelterTele;
     private EditText shelterName;
     private EditText shelterPre;
-    private Spinner shelterAddress1;
-    private Spinner shelterAddress2;
-    private Spinner shelterAddress3;
-    private String strAddress1;
-    private String strAddress2;
-    private String strAddress3;
     private Button setup_btn;
     private String user_id;
     private String shelter_tele;
@@ -41,7 +39,6 @@ public class ShelterSetupActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private ArrayAdapter adapter;
-    private Spinner spinner;
     String item1, item2, item3;
 
     @Override
@@ -4648,11 +4645,11 @@ public class ShelterSetupActivity extends AppCompatActivity {
 
         Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address);
 
-//        Map<String, String> userMap = new HashMap<>();
-//        userMap.put("tele", shelter.getTele());
-//        userMap.put("name", shelter.getName());
-//        userMap.put("reprename", shelter.getPre());
-//        userMap.put("address", shelter.getAddress());
+        Map<String, String> userMap = new HashMap<>();
+        userMap.put("tele", shelter.getTele());
+        userMap.put("sname", shelter.getSName());
+        userMap.put("pre", shelter.getPre());
+        userMap.put("address", shelter.getAddress());
 
         final String pre=shelter.getPre();
 

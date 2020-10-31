@@ -95,7 +95,7 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
                         //User user=document.toObject(User.class);
                         Shelter shelter=document.toObject(Shelter.class);
 
-                        shelter_name.setText(shelter.getName());
+                        shelter_name.setText(shelter.getSName());
                         shelter_tele.setText(shelter.getTele());
                         shelter_pre.setText(shelter.getPre());
                         shelter_address.setText(shelter.getAddress());
