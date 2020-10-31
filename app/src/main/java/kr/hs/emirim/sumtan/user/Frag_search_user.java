@@ -121,8 +121,8 @@ public class Frag_search_user extends Fragment {
         searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(getActivity(), AddressCard.class);
-               // startActivity(intent);
+                // Intent intent = new Intent(getActivity(), AddressCard.class);
+                // startActivity(intent);
             }
         });
 

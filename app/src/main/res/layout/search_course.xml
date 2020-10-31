@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="20dp"
@@ -12,10 +12,9 @@
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="150dp"
-        android:orientation="horizontal"
         tools:ignore="MissingConstraints"
         android:background="#E7E7E7"
-        android:layout_gravity="top|center"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         >
 
@@ -80,4 +79,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
