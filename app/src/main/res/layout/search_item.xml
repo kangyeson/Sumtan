@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="20dp"
-    tools:context=".user.Course">
+    tools:context=".user.SearchItem">
 
     <LinearLayout
         android:layout_width="350dp"
