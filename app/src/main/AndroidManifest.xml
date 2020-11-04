@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".user.UserSetupActivity"></activity>
+        <activity android:name=".user.UserSetupActivity" />
         <activity android:name=".shelter.ShelterSetupActivity" />
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".user.MainActivity" />
-        <activity android:name=".shelter.MainActivity_shelter"/>
+        <activity android:name=".shelter.MainActivity_shelter" />
         <activity android:name=".Register.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
