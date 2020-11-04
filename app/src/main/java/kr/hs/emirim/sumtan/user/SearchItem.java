@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment;
 
 import kr.hs.emirim.sumtan.R;
 
-public class Course extends Fragment {
+public class SearchItem extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.search_course,container,false);
+        return inflater.inflate(R.layout.search_item,container,false);
 
     }
 }

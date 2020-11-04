@@ -11,8 +11,13 @@ import android.widget.Button;
 
 import androidx.fragment.app.DialogFragment;
 
+import java.util.zip.Inflater;
+
+import kr.hs.emirim.sumtan.R;
+
 public class AddressCard extends DialogFragment {
-        //View view = inflater.inflate(R.layout.address_card, container, false);
+    private Inflater inflater;
+    //View view = inflater.inflate(R.layout.address_card, container, false);
 
         //Button carddown = findViewById(R.id.address_card_down);
 
