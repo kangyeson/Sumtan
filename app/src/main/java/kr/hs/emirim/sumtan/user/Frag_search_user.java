@@ -1,5 +1,6 @@
 package kr.hs.emirim.sumtan.user;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +37,7 @@ public class Frag_search_user extends Fragment {
     private String TAG = "Frag_search_user";
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView FirestoreList;
+    private Button submission_Button;
     private FirestoreRecyclerAdapter adapter;
     private View view;
 
@@ -62,7 +65,7 @@ public class Frag_search_user extends Fragment {
             @NonNull
             @Override
             public ShelterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_course, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_item, parent, false);
 
                 submission_Button=view.findViewById(R.id.submission_Button);
                 submission_Button.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +143,19 @@ public class Frag_search_user extends Fragment {
         return view;
     }
 
+    private class ShelterViewHolder extends RecyclerView.ViewHolder{
+        private TextView courseTitle;
+        private TextView courseTele;
+        private TextView courseAddress;
+        public ShelterViewHolder(@NonNull View itemView){
+            super(itemView);
+            courseTitle = itemView.findViewById(R.id.courseTitle);
+            courseTele = itemView.findViewById(R.id.courseTele);
+            courseAddress = itemView.findViewById(R.id.courseAddress);
+        }
+
+    }
+
     public void DialogClick(View view) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -163,18 +179,6 @@ public class Frag_search_user extends Fragment {
         alertDialog.show();
     }
 
-    private class ShelterViewHolder extends RecyclerView.ViewHolder{
-        private TextView courseTitle;
-        private TextView courseTele;
-        private TextView courseAddress;
-        public ShelterViewHolder(@NonNull View itemView){
-            super(itemView);
-            courseTitle = itemView.findViewById(R.id.courseTitle);
-            courseTele = itemView.findViewById(R.id.courseTele);
-            courseAddress = itemView.findViewById(R.id.courseAddress);
-        }
-
-    }
 
     @Override
     public void onStop(){

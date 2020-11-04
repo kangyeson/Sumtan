@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment;
 
 import kr.hs.emirim.sumtan.R;
 
-public class AddressItem extends Dialog {
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        return inflater.inflate(R.layout.address_item,container,false);
-
-    }
-}
+//public class AddressItem extends Dialog {
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+//    {
+//        return inflater.inflate(R.layout.address_item,container,false);
+//
+//    }
+//}
