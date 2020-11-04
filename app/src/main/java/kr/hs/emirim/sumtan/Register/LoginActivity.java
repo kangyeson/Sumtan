@@ -75,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "로그인 성공 ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "로그인 성공 "+user_id, Toast.LENGTH_SHORT).show();
+
                                 sendToMain();
                             }else{
                                 String errorMessage=task.getException().getMessage();

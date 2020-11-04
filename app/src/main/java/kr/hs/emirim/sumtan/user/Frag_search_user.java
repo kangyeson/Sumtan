@@ -1,5 +1,6 @@
 package kr.hs.emirim.sumtan.user;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +38,7 @@ public class Frag_search_user extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView FirestoreList;
     private FirestoreRecyclerAdapter adapter;
+    private Button submission_Button;
     private View view;
 
     private FirebaseAuth mAuth;
@@ -63,7 +66,18 @@ public class Frag_search_user extends Fragment {
             @Override
             public ShelterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_course, parent, false);
+
+                submission_Button=view.findViewById(R.id.submission_Button);
+                submission_Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DialogClick(view);
+                    }
+                });
+
                 return new ShelterViewHolder(view);
+
+
             }
 
             @Override
@@ -71,6 +85,9 @@ public class Frag_search_user extends Fragment {
                 holder.courseTitle.setText(shelter.getSName());
                 holder.courseTele.setText(shelter.getTele());
                 holder.courseAddress.setText(shelter.getAddress());
+
+
+
             }
         };
 
@@ -129,6 +146,29 @@ public class Frag_search_user extends Fragment {
 
 
         return view;
+    }
+
+    public void DialogClick(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("다이얼로그").setMessage("다이얼로그가 보인다면 성공입니다. 축하합니다!");
+        builder.setPositiveButton("성공", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getActivity(), "Yeah!!", Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNegativeButton("실패", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getActivity(),"Try again!", Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNeutralButton("Nuetral", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getActivity(),"neutral click", Toast.LENGTH_LONG).show();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     private class ShelterViewHolder extends RecyclerView.ViewHolder{
