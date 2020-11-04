@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "477603210382",
+    "firebase_url": "https://sumtan-2960b.firebaseio.com",
+    "project_id": "sumtan-2960b",
+    "storage_bucket": "sumtan-2960b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477603210382:android:19332814f65522a5ff55df",
+        "android_client_info": {
+          "package_name": "kr.hs.emirim.sumtan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477603210382-gfu50vf0ee7u7kk69eq0meh1cr7ebj1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.emirim.sumtan",
+            "certificate_hash": "217de1678baa5726dacf6b52bd3d4a67a017a4e0"
+          }
+        },
+        {
+          "client_id": "477603210382-aaecup6pmh2klnb9tu57qogjiiuavkl2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX-lB4ha32a_5uGpHX2HO94Zq1U5VZ5xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477603210382-aaecup6pmh2klnb9tu57qogjiiuavkl2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

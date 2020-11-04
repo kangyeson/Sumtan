@@ -1,28 +1,27 @@
 package kr.hs.emirim.sumtan.shelter;
 
 public class Shelter {
-    private String name;
+    private String sname;
     private String tele;
     private String pre;
     private String address;
 
-    public Shelter() {
 
-    }
+    public Shelter() {}
 
-    public Shelter(String name, String tele, String pre, String address) {
-        this.name = name;
+    public Shelter(String sname, String tele, String pre, String address) {
+        this.sname = sname;
         this.tele = tele;
         this.pre = pre;
         this.address = address;
     }
 
-    public String getName() {
-        return name;
+    public String getSName() {
+        return sname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSName(String sname) {
+        this.sname = sname;
     }
 
     public String getTele() {

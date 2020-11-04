@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.Frag_write_user">
+    tools:context=".user.Frag_search_user">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -59,11 +59,24 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="140dp"
-        android:id="@+id/my_search_page"
-        android:orientation="vertical"/>
+        android:fillViewport="true"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_marginTop="160dp"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/firestore_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </ScrollView>
+
 
 </RelativeLayout>
