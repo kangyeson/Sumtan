@@ -159,20 +159,15 @@ public class Frag_search_user extends Fragment {
     public void DialogClick(View view) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("다이얼로그").setMessage("다이얼로그가 보인다면 성공입니다. 축하합니다!");
-        builder.setPositiveButton("성공", new DialogInterface.OnClickListener() {
+        builder.setMessage("이력서를 제출하시겠습니까?");
+        builder.setPositiveButton("아니오", new DialogInterface.OnClickListener() {
             @Override public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getActivity(), "Yeah!!", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
             }
         });
-        builder.setNegativeButton("실패", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("예", new DialogInterface.OnClickListener() {
             @Override public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getActivity(),"Try again!", Toast.LENGTH_LONG).show();
-            }
-        });
-        builder.setNeutralButton("Nuetral", new DialogInterface.OnClickListener() {
-            @Override public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getActivity(),"neutral click", Toast.LENGTH_LONG).show();
+                //이제 shelter로 옮기기 데이터 resume...
             }
         });
         AlertDialog alertDialog = builder.create();

@@ -69,6 +69,7 @@ public class UserSetupActivity extends AppCompatActivity {
         userMap.put("email", user_email);
         userMap.put("name", user.getName());
         userMap.put("tele", user.getTele());
+        userMap.put("user_id", user_id);
 
         db.collection("Users").document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

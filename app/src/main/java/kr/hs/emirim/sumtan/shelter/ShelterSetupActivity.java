@@ -4650,6 +4650,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
         userMap.put("sname", shelter.getSName());
         userMap.put("pre", shelter.getPre());
         userMap.put("address", shelter.getAddress());
+        userMap.put("shelter_id", user_id);
 
         final String pre=shelter.getPre();
 
