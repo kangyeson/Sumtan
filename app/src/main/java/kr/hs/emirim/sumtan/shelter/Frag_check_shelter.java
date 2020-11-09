@@ -12,37 +12,38 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.user.User;
 
 public class Frag_check_shelter extends Fragment {
 
-//    RecyclerView recyclerView;
-//    PersonAdapter adapter;
-
+    private RecyclerView FirestoreList;
     private View view;
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser=null;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.activity_frag_check_shelter,container,false);
-//
-//        recyclerView = view.findViewById(R.id.rv);
-//        LinearLayoutManager layoutManager1 = new LinearLayoutManager(recyclerView.getContext());
-//        recyclerView.setLayoutManager(layoutManager1);
-//        adapter = new PersonAdapter();
-//        adapter.addItem(new Person("김민수","010-1000-1000"));
-//        adapter.addItem(new Person("김하늘","010-2000-2000"));
-//        adapter.addItem(new Person("박현","010-3000-3000"));
-//        recyclerView.setAdapter(adapter);
-//        adapter.setOnItemClicklistener(new OnPersonItemClickListener() {
-//            @Override
-//            public void onItemClick(PersonAdapter.ViewHolder holder, View view, int position) {
-//                Person item = adapter.getItem(position);
-////                Toast.makeText(getContext(),"아이템 선택 " + item.getName(), Toast.LENGTH_LONG).show();
-//                startActivity(new Intent(getContext(), Frag_shelter_check_detail.class));
-//            }
-//        });
+        FirestoreList=(RecyclerView)view.findViewById(R.id.checkr_list);
+        firebaseFirestore=FirebaseFirestore.getInstance();
+
+        mAuth=FirebaseAuth.getInstance();
+        currentUser= mAuth.getCurrentUser();
+
+        Query query = firebaseFirestore.collection("Users").orderBy("name");
+        FirestoreRecyclerOptions<User> options = new FirestoreRecyclerOptions.Builder<User>()
+                .setQuery(query, User.class)
+                .build();
 
         return view;
     }

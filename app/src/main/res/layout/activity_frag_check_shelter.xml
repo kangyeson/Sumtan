@@ -24,29 +24,23 @@
         android:layout_marginBottom="10dp"
         />
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_marginTop="160dp"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+            android:id="@+id/checkr_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbarFadeDuration="0"
-            android:scrollbarSize="5dp"
-            android:scrollbarThumbVertical="@android:color/darker_gray"
-            scrollbars="vertical">
-
+            android:layout_gravity="center">
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/btn_add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="추가"/>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
