@@ -7,7 +7,7 @@
     tools:context=".shelter.MainActivity_shelter">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNa"
+        android:id="@+id/bottomNavi"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#B39883"
