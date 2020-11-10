@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
             sendToMain();
 
         }else{
-            Toast.makeText(LoginActivity.this,"LoginActivity = > null", Toast.LENGTH_SHORT);
+            //Toast.makeText(LoginActivity.this,"LoginActivity = > null", Toast.LENGTH_SHORT);
 
         }
 

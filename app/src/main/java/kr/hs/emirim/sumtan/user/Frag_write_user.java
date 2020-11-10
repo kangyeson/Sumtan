@@ -109,6 +109,7 @@ public class Frag_write_user extends Fragment {
         resumeMap.put("info", resume.getInfo());
         resumeMap.put("career", resume.getCareer());
         resumeMap.put("timestamp", FieldValue.serverTimestamp());
+        resumeMap.put("NowResume", 0);
 
         db.collection("Resume").document(currentUser.getUid()).set(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

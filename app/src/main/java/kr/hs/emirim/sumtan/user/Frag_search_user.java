@@ -24,13 +24,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.Register.LoginActivity;
+import kr.hs.emirim.sumtan.shelter.MainActivity_shelter;
 import kr.hs.emirim.sumtan.shelter.Shelter;
 
 public class Frag_search_user extends Fragment {
@@ -42,7 +47,9 @@ public class Frag_search_user extends Fragment {
     private View view;
 
     private FirebaseAuth mAuth;
+    FirebaseFirestore db=null;
     private FirebaseUser currentUser=null;
+    private String user_id;
 
     @Nullable
     @Override
@@ -54,6 +61,7 @@ public class Frag_search_user extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         mAuth=FirebaseAuth.getInstance();
+        db= FirebaseFirestore.getInstance();
         currentUser= mAuth.getCurrentUser();
 
         Query query = firebaseFirestore.collection("Users").orderBy("sname");
@@ -157,6 +165,7 @@ public class Frag_search_user extends Fragment {
     }
 
     public void DialogClick(View view) {
+        DocumentReference docRef=db.collection("Resume").document(user_id);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage("이력서를 제출하시겠습니까?");
@@ -170,6 +179,21 @@ public class Frag_search_user extends Fragment {
             @Override public void onClick(DialogInterface dialog, int which) {
                 //Toast.makeText(getContext(), "예 누름", Toast.LENGTH_SHORT).show();
                 //이제 shelter로 옮기기 데이터 resume...
+                docRef.update("NowResume", 1);
+                DocumentReference docShel=db.collection("Users").document(user_id);
+                docShel.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                String shelterId = (String) document.get("shelter_id");
+                                docRef.update("shelter_id", shelterId);
+                            }
+                        }
+                    }
+                });
+
             }
         });
         AlertDialog alertDialog = builder.create();
@@ -189,5 +213,11 @@ public class Frag_search_user extends Fragment {
     public void onStart(){
         super.onStart();
         adapter.startListening();
+
+        if(currentUser!=null){
+            user_id=currentUser.getUid();
+        }else{
+
+        }
     }
 }

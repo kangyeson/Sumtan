@@ -33,7 +33,7 @@ public class MainActivity_shelter extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNa);
+        bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
