@@ -28,6 +28,7 @@ public class Frag_check_shelter extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser=null;
+    FirebaseFirestore db=null;
 
     @Nullable
     @Override
@@ -39,11 +40,9 @@ public class Frag_check_shelter extends Fragment {
 
         mAuth=FirebaseAuth.getInstance();
         currentUser= mAuth.getCurrentUser();
+        db= FirebaseFirestore.getInstance();
 
-        Query query = firebaseFirestore.collection("Users").orderBy("name");
-        FirestoreRecyclerOptions<User> options = new FirestoreRecyclerOptions.Builder<User>()
-                .setQuery(query, User.class)
-                .build();
+        Query query=firebaseFirestore.collection("Users").orderBy("name");
 
         return view;
     }

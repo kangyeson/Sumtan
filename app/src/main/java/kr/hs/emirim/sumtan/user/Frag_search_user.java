@@ -170,6 +170,7 @@ public class Frag_search_user extends Fragment {
 
     public void DialogClick(View view) {
         DocumentReference docRef=db.collection("Resume").document(user_id);
+        DocumentReference userRef=db.collection("Users").document(user_id);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage("이력서를 제출하시겠습니까?");
@@ -184,6 +185,7 @@ public class Frag_search_user extends Fragment {
                 //Toast.makeText(getContext(), "예 누름", Toast.LENGTH_SHORT).show();
                 //이제 shelter로 옮기기 데이터 resume...
                 docRef.update("NowResume", 1);
+                userRef.update("NowResume", 1);
                 DocumentReference docShel=db.collection("Users").document(user_id);
                 docShel.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
@@ -206,6 +208,8 @@ public class Frag_search_user extends Fragment {
                                                 String shelterId=document.getId();
                                                 docRef.update("shelter_name", Sr_shelterName);
                                                 docRef.update("shelter_id", shelterId);
+                                                userRef.update("shelter_name", Sr_shelterName);
+                                                userRef.update("shelter_id", shelterId);
                                             }
                                         }else{
 
