@@ -32,6 +32,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import kr.hs.emirim.sumtan.R;
 import kr.hs.emirim.sumtan.Register.LoginActivity;
@@ -45,11 +47,13 @@ public class Frag_search_user extends Fragment {
     private Button submission_Button;
     private FirestoreRecyclerAdapter adapter;
     private View view;
+    private View header;
 
     private FirebaseAuth mAuth;
     FirebaseFirestore db=null;
     private FirebaseUser currentUser=null;
     private String user_id;
+    private String Sr_shelterName;
 
     @Nullable
     @Override
@@ -186,9 +190,27 @@ public class Frag_search_user extends Fragment {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if(task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
+                            assert document != null;
                             if (document.exists()) {
-                                String shelterId = (String) document.get("shelter_id");
-                                docRef.update("shelter_id", shelterId);
+                                Shelter shelter=document.toObject(Shelter.class);
+                                assert shelter != null;
+                                String shelterId=shelter.getShelterid();
+                                TextView shelterName = view.findViewById(R.id.courseTitle);
+                                Sr_shelterName=shelterName.getText().toString();
+
+                                db.collection("Users").whereEqualTo("sname", shelterName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if(task.isSuccessful()){
+                                            for(QueryDocumentSnapshot document:task.getResult()){
+                                                Log.d("userShelter==========>", document.getId()+"=>"+document.getData());
+                                            }
+                                        }
+                                    }
+                                });
+
+//                                docRef.update("shelter_name", Sr_shelterName);
+//                                docRef.update("shelter_id", shelterId);
                             }
                         }
                     }

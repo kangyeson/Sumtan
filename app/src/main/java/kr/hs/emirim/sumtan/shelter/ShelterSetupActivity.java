@@ -4643,7 +4643,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
     private void adduser() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address);
+        Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address,user_id);
 
         Map<String, String> userMap = new HashMap<>();
         userMap.put("tele", shelter.getTele());

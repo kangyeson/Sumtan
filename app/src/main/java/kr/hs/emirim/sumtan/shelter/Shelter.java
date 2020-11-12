@@ -5,15 +5,17 @@ public class Shelter {
     private String tele;
     private String pre;
     private String address;
+    private String shelterid;
 
 
     public Shelter() {}
 
-    public Shelter(String sname, String tele, String pre, String address) {
+    public Shelter(String sname, String tele, String pre, String address, String shelterid) {
         this.sname = sname;
         this.tele = tele;
         this.pre = pre;
         this.address = address;
+        this.shelterid=shelterid;
     }
 
     public String getSName() {
@@ -46,5 +48,13 @@ public class Shelter {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getShelterid() {
+        return shelterid;
+    }
+
+    public void setShelterid(String shelterid) {
+        this.shelterid = shelterid;
     }
 }
