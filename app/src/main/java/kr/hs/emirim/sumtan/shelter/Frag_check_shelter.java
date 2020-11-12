@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.user.Frag_search_user;
 import kr.hs.emirim.sumtan.user.User;
 
 public class Frag_check_shelter extends Fragment {
@@ -29,6 +33,9 @@ public class Frag_check_shelter extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser=null;
     FirebaseFirestore db=null;
+    private FirestoreRecyclerAdapter adapter;
+
+
 
     @Nullable
     @Override
@@ -43,7 +50,38 @@ public class Frag_check_shelter extends Fragment {
         db= FirebaseFirestore.getInstance();
 
         Query query=firebaseFirestore.collection("Users").orderBy("name");
+        FirestoreRecyclerOptions<User> options=new FirestoreRecyclerOptions.Builder<User>()
+                .setQuery(query, User.class)
+                .build();
+
+        adapter=new FirestoreRecyclerAdapter<User, UserViewHolder>(options){
+            @NonNull
+            @Override
+            public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_check, parent, false);
+
+
+                return new UserViewHolder(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull User user) {
+                holder.uesrTitle.setText(user.getName());
+                holder.userTele.setText(user.getTele());
+            }
+        };
 
         return view;
+    }
+
+    private class UserViewHolder extends RecyclerView.ViewHolder{
+        private TextView uesrTitle;
+        private TextView userTele;
+        public UserViewHolder(@NonNull View itemView){
+            super(itemView);
+            uesrTitle = itemView.findViewById(R.id.userTitle);
+            userTele = itemView.findViewById(R.id.userTele);
+        }
+
     }
 }

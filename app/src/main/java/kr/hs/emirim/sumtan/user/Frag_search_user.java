@@ -47,7 +47,6 @@ public class Frag_search_user extends Fragment {
     private Button submission_Button;
     private FirestoreRecyclerAdapter adapter;
     private View view;
-    private View header;
 
     private FirebaseAuth mAuth;
     FirebaseFirestore db=null;
