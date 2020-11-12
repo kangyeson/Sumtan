@@ -198,19 +198,21 @@ public class Frag_search_user extends Fragment {
                                 TextView shelterName = view.findViewById(R.id.courseTitle);
                                 Sr_shelterName=shelterName.getText().toString();
 
-                                db.collection("Users").whereEqualTo("sname", shelterName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                db.collection("Users").whereEqualTo("sname", Sr_shelterName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                     @Override
                                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                         if(task.isSuccessful()){
                                             for(QueryDocumentSnapshot document:task.getResult()){
-                                                Log.d("userShelter==========>", document.getId()+"=>"+document.getData());
+                                                String shelterId=document.getId();
+                                                docRef.update("shelter_name", Sr_shelterName);
+                                                docRef.update("shelter_id", shelterId);
                                             }
+                                        }else{
+
                                         }
                                     }
                                 });
 
-//                                docRef.update("shelter_name", Sr_shelterName);
-//                                docRef.update("shelter_id", shelterId);
                             }
                         }
                     }
