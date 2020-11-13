@@ -2,6 +2,7 @@ package kr.hs.emirim.sumtan.shelter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import kr.hs.emirim.sumtan.R;
 import kr.hs.emirim.sumtan.user.Frag_search_user;
@@ -34,8 +40,7 @@ public class Frag_check_shelter extends Fragment {
     private FirebaseUser currentUser=null;
     FirebaseFirestore db=null;
     private FirestoreRecyclerAdapter adapter;
-
-
+    private String user_id;
 
     @Nullable
     @Override
@@ -66,10 +71,26 @@ public class Frag_check_shelter extends Fragment {
 
             @Override
             protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull User user) {
+                db.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.isSuccessful()){
+                            DocumentSnapshot docu=task.getResult();
+                            if(docu.exists()){
+                                Log.d("shelterid=====>", String.valueOf(docu.getDate("shelterid")));
+                            }
+                        }
+                    }
+                });
+               // db.collection("Users").whereEqualTo("shelterid",user_id).whereEqualTo("")
                 holder.uesrTitle.setText(user.getName());
                 holder.userTele.setText(user.getTele());
             }
         };
+
+        FirestoreList.setHasFixedSize(true);
+        FirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        FirestoreList.setAdapter(adapter);
 
         return view;
     }
@@ -83,5 +104,18 @@ public class Frag_check_shelter extends Fragment {
             userTele = itemView.findViewById(R.id.userTele);
         }
 
+    }
+
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        adapter.startListening();
+
+        if(currentUser!=null){
+            user_id=currentUser.getUid();
+        }else{
+
+        }
     }
 }
