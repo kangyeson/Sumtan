@@ -2,6 +2,7 @@ package kr.hs.emirim.sumtan.shelter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import kr.hs.emirim.sumtan.R;
 import kr.hs.emirim.sumtan.user.User;
@@ -31,8 +33,8 @@ public class Frag_shelter_check_detail extends Fragment {
     private FirebaseUser currentUser=null;
     FirebaseFirestore db=null;
     private String user_id;
-    private String userId;
-    private String getUserName;
+    private EditText informationEditText;
+    private EditText careerEditText;
 
     @Nullable
     @Override
@@ -50,18 +52,19 @@ public class Frag_shelter_check_detail extends Fragment {
 
         }
 
-        DocumentReference docShel=db.collection("Users").document(user_id);
-        docShel.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if(task.isSuccessful()){
-                    DocumentSnapshot documentSnapshot=task.getResult();
-                    if(documentSnapshot.exists()){
-                        User user=documentSnapshot.toObject(User.class);
-                        userId=user.getUserid();
+        informationEditText=view.findViewById(R.id.informationEditText);
+        careerEditText=view.findViewById(R.id.careerEditText);
 
-                        TextView userName=view.findViewById(R.id.courseTitle);
-                        getUserName=userName.getText().toString();
+        db.collection("Resume").whereEqualTo("clickR",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(DocumentSnapshot docu:task.getResult()){
+//                        User user=docu.toObject(User.class);
+//                        Log.d("name====>", user.getName());
+                        Log.d("docuId",docu.getId()+"=>"+docu.getData());
+                        informationEditText.setText(docu.get("info").toString());
+                        careerEditText.setText(docu.get("career").toString());
                     }
                 }
             }

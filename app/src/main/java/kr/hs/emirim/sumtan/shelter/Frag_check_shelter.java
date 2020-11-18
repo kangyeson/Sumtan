@@ -135,16 +135,12 @@ public class Frag_check_shelter extends Fragment {
                                                     }
                                                 }
                                             });
-//                                            DocumentReference docResume=db.collection("Resume").document(userId);
-//                                            docResume.update("clickR", 1);
                                         }
                                     }
                                 }
                             });
 
-
-
-                        //changeFragment(0);
+                        changeFragment(0);
                     }
                 });
 
