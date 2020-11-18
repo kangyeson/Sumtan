@@ -32,6 +32,10 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import kr.hs.emirim.sumtan.R;
 import kr.hs.emirim.sumtan.user.Frag_search_user;
 import kr.hs.emirim.sumtan.user.User;
@@ -46,7 +50,8 @@ public class Frag_check_shelter extends Fragment {
     FirebaseFirestore db=null;
     private FirestoreRecyclerAdapter adapter;
     private String user_id;
-    private String userName;
+    private List<String> user_Name=new ArrayList();
+    private List<String> user_Tele=new ArrayList();
 
     @Nullable
     @Override
@@ -54,13 +59,18 @@ public class Frag_check_shelter extends Fragment {
     {
         view = inflater.inflate(R.layout.activity_frag_check_shelter,container,false);
         FirestoreList=(RecyclerView)view.findViewById(R.id.checkr_list);
-        firebaseFirestore=FirebaseFirestore.getInstance();
 
         mAuth=FirebaseAuth.getInstance();
         currentUser= mAuth.getCurrentUser();
         db= FirebaseFirestore.getInstance();
 
-        Query query=firebaseFirestore.collection("Users").orderBy("name");
+        if(currentUser!=null){
+            user_id=currentUser.getUid();
+        }else{
+
+        }
+
+        Query query=db.collection("Users").whereEqualTo("NowResume", 1).whereEqualTo("shelter_id", user_id);
         FirestoreRecyclerOptions<User> options=new FirestoreRecyclerOptions.Builder<User>()
                 .setQuery(query, User.class)
                 .build();
@@ -70,28 +80,28 @@ public class Frag_check_shelter extends Fragment {
             @Override
             public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_check, parent, false);
-
-
+//                db.collection("Users").whereEqualTo("NowResume", 1).whereEqualTo("shelter_id", user_id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                //Log.d("id====>", document.getId() + " => " + document.get("id"));
+//                                User user=document.toObject(User.class);
+//                                String name=user.getName();
+//                                String tele=user.getTele();
+//                                user_Name.add(name);
+//                                user_Tele.add(tele);
+//                            }
+//                        } else {
+//                            Log.d("error==>", "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
                 return new UserViewHolder(view);
             }
 
             @Override
             protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull User user) {
-                db.collection("Users").whereEqualTo("NowResume", 1).whereEqualTo("shelter_id", user_id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("id====>", document.getId() + " => " + document.getData());
-                                User user=document.toObject(User.class);
-                                user.getName();
-                            }
-                        } else {
-                            Log.d("error==>", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-               // db.collection("Users").whereEqualTo("shelterid",user_id).whereEqualTo("")
                 holder.uesrTitle.setText(user.getName());
                 holder.userTele.setText(user.getTele());
             }
