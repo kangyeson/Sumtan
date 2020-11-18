@@ -103,6 +103,17 @@ public class Frag_check_shelter extends Fragment {
             protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull User user) {
                 holder.uesrTitle.setText(user.getName());
                 holder.userTele.setText(user.getTele());
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getActivity(), Frag_shelter_check_detail.class);
+                        intent.putExtra("uname", user.getName());
+                        intent.putExtra("uemail", currentUser.getEmail());
+                        intent.putExtra("utele", user.getTele());
+                        startActivity(intent);
+                    }
+                });
             }
         };
 
