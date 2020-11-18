@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,14 +46,11 @@ public class Frag_check_shelter extends Fragment {
 
     private RecyclerView FirestoreList;
     private View view;
-    private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser=null;
     FirebaseFirestore db=null;
     private FirestoreRecyclerAdapter adapter;
     private String user_id;
-    private List<String> user_Name=new ArrayList();
-    private List<String> user_Tele=new ArrayList();
 
     @Nullable
     @Override
@@ -124,7 +123,6 @@ public class Frag_check_shelter extends Fragment {
         }
 
     }
-
 
     @Override
     public void onStart(){
