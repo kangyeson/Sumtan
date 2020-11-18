@@ -57,7 +57,7 @@ public class Frag_check_shelter extends Fragment {
     private String user_id;
     private Frag_shelter_check_detail fcd;
     private String getUserName;
-    private String userId;
+    private String userId="";
 
     @Nullable
     @Override
@@ -119,18 +119,30 @@ public class Frag_check_shelter extends Fragment {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if(task.isSuccessful()){
                                         for(QueryDocumentSnapshot docu:task.getResult()){
-                                            userId=user.getUserid();
-                                            DocumentReference docResume=db.collection("Resume").document(userId);
-                                            docResume.update("clickR", 1);
+//                                            User user=docu.toObject(User.class);
+//                                            assert user != null;
+//                                            String userId=user.getUserid();
+                                            Log.d("ma,e=====>", user.getName());
+                                            db.collection("Users").whereEqualTo("name", user.getName()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                    if(task.isSuccessful()){
+                                                        for(DocumentSnapshot docu:task.getResult()){
+                                                            Log.d("user_id===>",docu.get("user_id").toString());
+                                                            db.collection("Resume").document(docu.get("user_id").toString()).update("clickR",1);
+                                                            db.collection("Resume").document(docu.get("user_id").toString()).update("user_name",user.getName());
+                                                        }
+                                                    }
+                                                }
+                                            });
+//                                            DocumentReference docResume=db.collection("Resume").document(userId);
+//                                            docResume.update("clickR", 1);
                                         }
                                     }
                                 }
                             });
-//                        Intent intent=new Intent(getActivity(), Frag_shelter_check_detail.class);
-//                        intent.putExtra("uname", user.getName());
-//                        intent.putExtra("uemail", currentUser.getEmail());
-//                        intent.putExtra("utele", user.getTele());
-//                        startActivity(intent);
+
+
 
                         //changeFragment(0);
                     }
