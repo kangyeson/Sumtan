@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,11 +48,16 @@ public class Frag_check_shelter extends Fragment {
 
     private RecyclerView FirestoreList;
     private View view;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser=null;
     FirebaseFirestore db=null;
     private FirestoreRecyclerAdapter adapter;
     private String user_id;
+    private Frag_shelter_check_detail fcd;
+    private String getUserName;
+    private String userId;
 
     @Nullable
     @Override
@@ -104,18 +111,42 @@ public class Frag_check_shelter extends Fragment {
                 holder.uesrTitle.setText(user.getName());
                 holder.userTele.setText(user.getTele());
 
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                holder.uesrTitle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(getActivity(), Frag_shelter_check_detail.class);
-                        intent.putExtra("uname", user.getName());
-                        intent.putExtra("uemail", currentUser.getEmail());
-                        intent.putExtra("utele", user.getTele());
-                        startActivity(intent);
+                            db.collection("Users").whereEqualTo("name", user.getName()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        for(QueryDocumentSnapshot docu:task.getResult()){
+                                            userId=user.getUserid();
+                                            DocumentReference docResume=db.collection("Resume").document(userId);
+                                            docResume.update("clickR", 1);
+                                        }
+                                    }
+                                }
+                            });
+//                        Intent intent=new Intent(getActivity(), Frag_shelter_check_detail.class);
+//                        intent.putExtra("uname", user.getName());
+//                        intent.putExtra("uemail", currentUser.getEmail());
+//                        intent.putExtra("utele", user.getTele());
+//                        startActivity(intent);
+
+                        //changeFragment(0);
                     }
                 });
+
+                db.collection("Resume").whereEqualTo("clickR", 1).whereEqualTo("user_id", userId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    }
+                });
+
             }
         };
+
+        fcd=new Frag_shelter_check_detail();
 
         FirestoreList.setHasFixedSize(true);
         FirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -147,5 +178,16 @@ public class Frag_check_shelter extends Fragment {
         }
 
 
+    }
+
+    private void changeFragment(int n) {
+        fm = getFragmentManager();
+        ft = fm.beginTransaction();
+        switch (n) {
+            case 0:
+                ft.replace(R.id.check_frame, fcd);
+                ft.commit();
+                break;
+        }
     }
 }

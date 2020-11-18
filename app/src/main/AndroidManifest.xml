@@ -15,7 +15,7 @@
         <activity android:name=".shelter.ShelterSetupActivity" />
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".user.MainActivity" />
-        <activity android:name=".user.Course" />
+        <activity android:name=".shelter.Modify_shelter"/>
         <activity android:name=".shelter.MainActivity_shelter"/>
         <activity android:name=".Register.LoginActivity">
             <intent-filter>

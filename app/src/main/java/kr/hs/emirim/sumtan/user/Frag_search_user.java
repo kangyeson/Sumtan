@@ -183,7 +183,6 @@ public class Frag_search_user extends Fragment {
             @Override public void onClick(DialogInterface dialog, int which) {
                 //Toast.makeText(getContext(), "예 누름", Toast.LENGTH_SHORT).show();
                 //이제 shelter로 옮기기 데이터 resume...
-                docRef.update("NowResume", 1);
                 userRef.update("NowResume", 1);
                 DocumentReference docShel=db.collection("Users").document(user_id);
                 docShel.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

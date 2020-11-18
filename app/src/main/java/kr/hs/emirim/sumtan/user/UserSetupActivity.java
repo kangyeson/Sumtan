@@ -63,13 +63,13 @@ public class UserSetupActivity extends AppCompatActivity {
     private void adduser() {
         FirebaseFirestore db=FirebaseFirestore.getInstance();
 
-        User user=new User(user_name, user_tele);
+        User user=new User(user_name, user_tele, user_id);
 
         Map<String, String> userMap=new HashMap<>();
         userMap.put("email", user_email);
         userMap.put("name", user.getName());
         userMap.put("tele", user.getTele());
-        userMap.put("user_id", user_id);
+        userMap.put("user_id", user.getUserid());
 
         db.collection("Users").document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
