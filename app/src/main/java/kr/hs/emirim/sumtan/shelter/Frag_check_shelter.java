@@ -22,9 +22,14 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import kr.hs.emirim.sumtan.R;
@@ -41,6 +46,7 @@ public class Frag_check_shelter extends Fragment {
     FirebaseFirestore db=null;
     private FirestoreRecyclerAdapter adapter;
     private String user_id;
+    private String userName;
 
     @Nullable
     @Override
@@ -71,14 +77,17 @@ public class Frag_check_shelter extends Fragment {
 
             @Override
             protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull User user) {
-                db.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                db.collection("Users").whereEqualTo("NowResume", 1).whereEqualTo("shelter_id", user_id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(task.isSuccessful()){
-                            DocumentSnapshot docu=task.getResult();
-                            if(docu.exists()){
-                                Log.d("shelterid=====>", String.valueOf(docu.getDate("shelterid")));
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("id====>", document.getId() + " => " + document.getData());
+                                User user=document.toObject(User.class);
+                                user.getName();
                             }
+                        } else {
+                            Log.d("error==>", "Error getting documents: ", task.getException());
                         }
                     }
                 });
@@ -117,5 +126,7 @@ public class Frag_check_shelter extends Fragment {
         }else{
 
         }
+
+
     }
 }

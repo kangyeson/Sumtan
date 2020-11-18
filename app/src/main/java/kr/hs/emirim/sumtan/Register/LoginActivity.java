@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private String userName;
     private FirebaseAuth mAuth;
     private ProgressBar loginProgress;
-    private FirebaseUser currentUser=null;
+    private FirebaseUser currentUser;
 
 
     @Override
@@ -59,9 +59,11 @@ public class LoginActivity extends AppCompatActivity {
         loginRegText=(TextView)findViewById(R.id.login_reg);
         loginProgress=(ProgressBar)findViewById(R.id.login_progress);
 
+
         currentUser= mAuth.getCurrentUser();
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
@@ -75,9 +77,9 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "로그인 성공 "+user_id, Toast.LENGTH_SHORT).show();
-
-                                sendToMain();
+                                currentUser=mAuth.getCurrentUser();
+                                user_id=currentUser.getUid();
+                                sendToMain(user_id);
                             }else{
                                 String errorMessage=task.getException().getMessage();
                                 Toast.makeText(LoginActivity.this, "error : "+errorMessage, Toast.LENGTH_SHORT).show();
@@ -103,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if(currentUser!=null){
             user_id=currentUser.getUid();
-            sendToMain();
+            sendToMain(user_id);
 
         }else{
             //Toast.makeText(LoginActivity.this,"LoginActivity = > null", Toast.LENGTH_SHORT);
@@ -112,9 +114,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void sendToMain() {
-
-        //Toast.makeText(LoginActivity.this, "error : "+user_id, Toast.LENGTH_LONG).show();
+    private void sendToMain(String user_id) {
 
         DocumentReference docRef=db.collection("Users").document(user_id);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
