@@ -35,6 +35,9 @@ public class Frag_shelter_check_detail extends Fragment {
     private String user_id;
     private EditText informationEditText;
     private EditText careerEditText;
+    private TextView userName;
+    private EditText userEmail;
+    private EditText userTele;
 
     @Nullable
     @Override
@@ -54,6 +57,9 @@ public class Frag_shelter_check_detail extends Fragment {
 
         informationEditText=view.findViewById(R.id.informationEditText);
         careerEditText=view.findViewById(R.id.careerEditText);
+        userName=view.findViewById(R.id.userName);
+        userEmail=view.findViewById(R.id.userEmail);
+        userTele=view.findViewById(R.id.userTele);
 
         db.collection("Resume").whereEqualTo("clickR",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -61,8 +67,12 @@ public class Frag_shelter_check_detail extends Fragment {
                 if(task.isSuccessful()){
                     for(DocumentSnapshot docu:task.getResult()){
 //                        User user=docu.toObject(User.class);
+//                        assert user != null;
 //                        Log.d("name====>", user.getName());
                         Log.d("docuId",docu.getId()+"=>"+docu.getData());
+                        userName.setText(docu.get("user_name").toString());
+                        userEmail.setText(docu.get("user_email").toString());
+                        userTele.setText(docu.get("user_tele").toString());
                         informationEditText.setText(docu.get("info").toString());
                         careerEditText.setText(docu.get("career").toString());
                     }

@@ -119,9 +119,6 @@ public class Frag_check_shelter extends Fragment {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if(task.isSuccessful()){
                                         for(QueryDocumentSnapshot docu:task.getResult()){
-//                                            User user=docu.toObject(User.class);
-//                                            assert user != null;
-//                                            String userId=user.getUserid();
                                             Log.d("ma,e=====>", user.getName());
                                             db.collection("Users").whereEqualTo("name", user.getName()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                                 @Override
@@ -131,6 +128,7 @@ public class Frag_check_shelter extends Fragment {
                                                             Log.d("user_id===>",docu.get("user_id").toString());
                                                             db.collection("Resume").document(docu.get("user_id").toString()).update("clickR",1);
                                                             db.collection("Resume").document(docu.get("user_id").toString()).update("user_name",user.getName());
+                                                            db.collection("Resume").document(docu.get("user_id").toString()).update("user_tele",user.getTele());
                                                         }
                                                     }
                                                 }
@@ -139,7 +137,7 @@ public class Frag_check_shelter extends Fragment {
                                     }
                                 }
                             });
-
+                        fcd=new Frag_shelter_check_detail();
                         changeFragment(0);
                     }
                 });
@@ -153,8 +151,6 @@ public class Frag_check_shelter extends Fragment {
 
             }
         };
-
-        fcd=new Frag_shelter_check_detail();
 
         FirestoreList.setHasFixedSize(true);
         FirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));

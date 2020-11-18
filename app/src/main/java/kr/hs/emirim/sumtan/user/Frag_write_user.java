@@ -108,6 +108,7 @@ public class Frag_write_user extends Fragment {
         resumeMap.put("user_id", user_id);
         resumeMap.put("info", resume.getInfo());
         resumeMap.put("career", resume.getCareer());
+        resumeMap.put("user_email", currentUser.getEmail());
         resumeMap.put("timestamp", FieldValue.serverTimestamp());
 
         db.collection("Resume").document(currentUser.getUid()).set(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
