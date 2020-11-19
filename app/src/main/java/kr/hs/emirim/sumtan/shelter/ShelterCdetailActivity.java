@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -77,7 +78,6 @@ public class ShelterCdetailActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     for(DocumentSnapshot docu:task.getResult()){
                         User user=docu.toObject(User.class);
-                        String userId=(String) docu.get("user_id");
                         String name=user.getName();
                         if(checkUser.equals(name)){
                             db.collection("Resume").whereEqualTo("user_name", name).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -85,12 +85,16 @@ public class ShelterCdetailActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if(task.isSuccessful()){
                                         for(DocumentSnapshot doc:task.getResult()){
-                                            Log.d("userNmae===>", (String) doc.get("user_name"));
-                                            userName.setText((String)doc.get("user_name"));
-                                            userEmail.setText((String)doc.get("user_email"));
-                                            userTele.setText((String)doc.get("user_tele"));
-                                            informationEditText.setText((String)doc.get("info"));
-                                            careerEditText.setText((String)doc.get("career"));
+                                            String user_name= (String) doc.get("user_name");
+                                            String user_email= (String) doc.get("user_email");
+                                            String user_tele= (String) doc.get("user_tele");
+                                            String info= (String) doc.get("info");
+                                            String career= (String) doc.get("career");
+                                            userName.setText(user_name);
+                                            userEmail.setText(user_email);
+                                            userTele.setText(user_tele);
+                                            informationEditText.setText(info);
+                                            careerEditText.setText(career);
                                         }
                                     }
                                 }
