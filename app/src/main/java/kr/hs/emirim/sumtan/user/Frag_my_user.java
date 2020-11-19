@@ -42,7 +42,7 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
     private String shelterName="";
     private String shelterTele;
     private Button btn_call;
-    private Button btn_end;
+    private TextView btn_end;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db=null;
@@ -69,7 +69,7 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
         btn_remove=(Button)v.findViewById(R.id.btn_remove);
         tv_shelterName=(TextView)v.findViewById(R.id.tv_shelterName);
         btn_call=(Button)v.findViewById(R.id.btn_call);
-        btn_end=(Button)v.findViewById(R.id.btn_end);
+        btn_end=(TextView)v.findViewById(R.id.btn_end);
 
         btn_logout.setOnClickListener(this);
         btn_remove.setOnClickListener(this);
