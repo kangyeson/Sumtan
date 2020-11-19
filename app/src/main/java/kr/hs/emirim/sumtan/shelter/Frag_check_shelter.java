@@ -6,10 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,26 +19,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import kr.hs.emirim.sumtan.R;
-import kr.hs.emirim.sumtan.user.Frag_search_user;
 import kr.hs.emirim.sumtan.user.User;
 
 public class Frag_check_shelter extends Fragment {
@@ -55,7 +42,7 @@ public class Frag_check_shelter extends Fragment {
     FirebaseFirestore db=null;
     private FirestoreRecyclerAdapter adapter;
     private String user_id;
-    private Frag_shelter_check_detail fcd;
+    private ShelterCdetailActivity fcd;
     private String getUserName;
     private String userId="";
 
@@ -137,8 +124,7 @@ public class Frag_check_shelter extends Fragment {
                                     }
                                 }
                             });
-                        fcd=new Frag_shelter_check_detail();
-                        changeFragment(0);
+                            startActivity(new Intent(getActivity(), ShelterCdetailActivity.class));
                     }
                 });
 
@@ -182,16 +168,5 @@ public class Frag_check_shelter extends Fragment {
         }
 
 
-    }
-
-    private void changeFragment(int n) {
-        fm = getFragmentManager();
-        ft = fm.beginTransaction();
-        switch (n) {
-            case 0:
-                ft.replace(R.id.check_frame, fcd);
-                ft.commit();
-                break;
-        }
     }
 }

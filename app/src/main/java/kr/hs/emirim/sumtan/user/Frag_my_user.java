@@ -2,6 +2,7 @@ package kr.hs.emirim.sumtan.user;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,6 +36,11 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
     private Button btn_logout;
     private Button btn_remove;
     private String user_id;
+    private TextView tv_shelterName;
+    private String shelterName="";
+    private String shelterTele;
+    private Button btn_call;
+    private Button btn_end;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db=null;
@@ -48,14 +54,55 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
 
         db = FirebaseFirestore.getInstance();
         currentUser= mAuth.getCurrentUser();
+        if(currentUser!=null){
+            user_id=currentUser.getUid();
+            showImfor();
+        }else{
+
+        }
 
         apply=(TextView)v.findViewById(R.id.apply);
         btn_logout=(Button)v.findViewById(R.id.btn_logout);
         user_name=(TextView)v.findViewById(R.id.user_name);
         btn_remove=(Button)v.findViewById(R.id.btn_remove);
+        tv_shelterName=(TextView)v.findViewById(R.id.tv_shelterName);
+        btn_call=(Button)v.findViewById(R.id.btn_call);
+        btn_end=(Button)v.findViewById(R.id.btn_end);
 
         btn_logout.setOnClickListener(this);
         btn_remove.setOnClickListener(this);
+
+        btn_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+shelterTele));
+                startActivity(intent);
+            }
+        });
+
+        DocumentReference userRef=db.collection("Users").document(user_id);
+
+        btn_end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.collection("Users").whereEqualTo("NowResume",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            for(DocumentSnapshot docu:task.getResult()){
+                                userRef.update("shelter_name", "");
+                                userRef.update("shelter_tele", "");
+                                userRef.update("shelter_id", "");
+                                userRef.update("NowResume", 0);
+                            }
+                            Toast.makeText(getActivity(), "재능 기부가 종료되었습니다", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
 
         return v;
     }
@@ -70,6 +117,19 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
         }else{
 
         }
+
+        db.collection("Users").whereEqualTo("NowResume",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for(DocumentSnapshot docu:task.getResult()){
+                        shelterName= (String) docu.get("shelter_name");
+                        tv_shelterName.setText(shelterName);
+                        shelterTele= (String) docu.get("shelter_tele");
+                    }
+                }
+            }
+        });
     }
 
     private void showImfor() {

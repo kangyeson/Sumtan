@@ -204,10 +204,12 @@ public class Frag_search_user extends Fragment {
                                         if(task.isSuccessful()){
                                             for(QueryDocumentSnapshot document:task.getResult()){
                                                 String shelterId=document.getId();
+                                                String shelterTele= (String) document.get("tele");
                                                 docRef.update("shelter_name", Sr_shelterName);
                                                 docRef.update("shelter_id", shelterId);
                                                 userRef.update("shelter_name", Sr_shelterName);
                                                 userRef.update("shelter_id", shelterId);
+                                                userRef.update("shelter_tele", shelterTele);
                                             }
                                         }else{
 

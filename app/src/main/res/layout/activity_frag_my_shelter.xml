@@ -22,14 +22,6 @@
             android:layout_gravity="center_horizontal"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="소중한 작은 것들"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            />
-
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,28 +34,11 @@
             android:layout_height="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
             android:background="@drawable/ic_baseline_settings_60"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/shelter_ImageView"
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:background="#C4C4C4"/>
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,14 +65,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="연락처 : "/>
+                    android:text="연락처"/>
 
                 <TextView
                     android:id="@+id/shelter_tele"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -111,14 +85,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="대표자명 : "/>
+                    android:textSize="18sp"
+                    android:text="대표자명 "/>
 
                 <TextView
                     android:id="@+id/shelter_pre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -132,27 +106,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:layout_marginBottom="10dp"
-                    android:text="주소"/>
+                    android:text="주소 "/>
 
                 <TextView
                     android:id="@+id/shelter_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그아웃"
+        android:background="@drawable/check_radius"
         android:textSize="20sp" />
 
 </LinearLayout>

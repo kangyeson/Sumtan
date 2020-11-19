@@ -16,14 +16,6 @@
         android:layout_gravity="center_horizontal"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="소중한 작은 것들"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        />
-
     <FrameLayout
         android:id="@+id/check_frame"
         android:layout_width="match_parent"
