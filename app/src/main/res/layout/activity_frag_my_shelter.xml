@@ -28,10 +28,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/shelter_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/unbee"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
         <Button
             android:id="@+id/iv_modify"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="20dp"
@@ -44,16 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="15dp"
-            >
-
-            <TextView
-                android:id="@+id/shelter_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp" />
+            android:layout_marginLeft="100dp">
 
             <LinearLayout
                 android:id="@+id/lay_tele"
@@ -65,12 +69,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="연락처"/>
+                    android:fontFamily="@font/bmhanna"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="연락처  "/>
 
                 <TextView
                     android:id="@+id/shelter_tele"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/bmhanna"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -85,13 +94,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="대표자명 "/>
+                    android:fontFamily="@font/bmhanna"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="대표자명  "/>
 
                 <TextView
                     android:id="@+id/shelter_pre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/bmhanna"
+                    android:textStyle="normal"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -100,20 +113,24 @@
                 android:id="@+id/lay_adress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/bmhanna"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:text="주소 "/>
+                    android:text="주소  "/>
 
                 <TextView
                     android:id="@+id/shelter_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/bmhanna"
+                    android:textStyle="normal"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -125,7 +142,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그아웃"
-        android:background="@drawable/check_radius"
-        android:textSize="20sp" />
+        android:fontFamily="@font/bmhanna"
+        android:textStyle="bold"
+        android:background="@drawable/lj_radius"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원탈퇴"
+        android:fontFamily="@font/bmhanna"
+        android:textStyle="bold"
+        android:background="@drawable/lj_radius"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp" />
 
 </LinearLayout>

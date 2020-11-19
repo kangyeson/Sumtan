@@ -52,7 +52,13 @@ public class ShelterSetupActivity extends AppCompatActivity {
         shelterName = (EditText) findViewById(R.id.shelterName);
         shelterPre = (EditText) findViewById(R.id.shelterPre);
         setup_btn = (Button) findViewById(R.id.setup_btn);
-        user_id = firebaseAuth.getCurrentUser().getUid();
+
+
+        if(firebaseAuth!=null){
+            user_id=firebaseAuth.getUid();
+        }else{
+
+        }
 
         final Spinner[] spinner1 = {(Spinner) findViewById(R.id.shelterAddress1)};
         final Spinner[] spinner2 = {(Spinner) findViewById(R.id.shelterAddress2)};

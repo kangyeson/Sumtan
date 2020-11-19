@@ -31,17 +31,20 @@
 
             <Button
                 android:id="@+id/btn_remove"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:background="@drawable/lj_radius"
+                android:layout_marginBottom="20dp"
                 android:text="@string/delete_user"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/btn_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
                 android:text="로그아웃"
-                android:textSize="20sp"/>
+                android:background="@drawable/lj_radius"
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -92,9 +95,10 @@
 
     <Button
         android:id="@+id/btn_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
+        android:background="@drawable/lj_radius"
         android:layout_marginTop="100dp"
         android:text="@string/end_done"/>
 

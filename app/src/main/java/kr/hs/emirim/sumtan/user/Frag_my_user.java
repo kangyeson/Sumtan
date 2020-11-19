@@ -17,6 +17,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -187,26 +189,38 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
     }
 
     private void deleteAccount() {
-//        AuthUI.getInstance()
-//                .delete(this)
-//                .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        if(task.isSuccessful()) {
-//                            Toast.makeText(getActivity(), "계정 삭제 성공!", Toast.LENGTH_LONG).show();
-//                            startActivity(new Intent(getActivity(), LoginActivity.class));
-//                        } else {
-//                            Toast.makeText(getActivity(), "계정 삭제 실패!", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                });
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user.delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(getActivity(), "계정 삭제 성공!", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getActivity(), LoginActivity.class));
+                        if(task.isSuccessful()){
+                            db.collection("Users").document(user_id).delete()
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    db.collection("Resume").document(user_id).delete()
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    Toast.makeText(getActivity(), "계정 삭제 성공!", Toast.LENGTH_LONG).show();
+                                                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w("error : ", "Error deleting document", e);
+                                                }
+                                            });
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("error : ", "Error deleting document", e);
+                                }
+                            });
+                        }
                     }
                 });
     }
