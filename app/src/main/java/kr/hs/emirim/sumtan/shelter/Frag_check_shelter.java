@@ -106,13 +106,11 @@ public class Frag_check_shelter extends Fragment {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if(task.isSuccessful()){
                                         for(QueryDocumentSnapshot docu:task.getResult()){
-                                            Log.d("ma,e=====>", user.getName());
                                             db.collection("Users").whereEqualTo("name", user.getName()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                     if(task.isSuccessful()){
                                                         for(DocumentSnapshot docu:task.getResult()){
-                                                            Log.d("user_id===>",docu.get("user_id").toString());
                                                             db.collection("Resume").document(docu.get("user_id").toString()).update("clickR",1);
                                                             db.collection("Resume").document(docu.get("user_id").toString()).update("user_name",user.getName());
                                                             db.collection("Resume").document(docu.get("user_id").toString()).update("user_tele",user.getTele());
@@ -124,7 +122,10 @@ public class Frag_check_shelter extends Fragment {
                                     }
                                 }
                             });
-                            startActivity(new Intent(getActivity(), ShelterCdetailActivity.class));
+                            Intent intent=new Intent(getActivity(), ShelterCdetailActivity.class);
+                            intent.putExtra("checkName", user.getName());
+                            startActivity(intent);
+
                     }
                 });
 

@@ -26,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.user.User;
 
 public class ShelterCdetailActivity extends AppCompatActivity {
 
@@ -52,6 +53,9 @@ public class ShelterCdetailActivity extends AppCompatActivity {
         currentUser= mAuth.getCurrentUser();
         db= FirebaseFirestore.getInstance();
 
+        String checkUser=getIntent().getStringExtra("checkName");
+        Log.d("checkUser=====>", checkUser);
+
         if(currentUser!=null){
             user_id=currentUser.getUid();
         }else{
@@ -67,20 +71,31 @@ public class ShelterCdetailActivity extends AppCompatActivity {
         userTele=findViewById(R.id.userTele);
         btn_back=findViewById(R.id.btn_back);
 
-        db.collection("Resume").whereEqualTo("clickR",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("Users").whereEqualTo("NowResume",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     for(DocumentSnapshot docu:task.getResult()){
-//                        User user=docu.toObject(User.class);
-//                        assert user != null;
-//                        Log.d("name====>", user.getName());
-                        Log.d("docuId",docu.getId()+"=>"+docu.getData());
-                        userName.setText(docu.get("user_name").toString());
-                        userEmail.setText(docu.get("user_email").toString());
-                        userTele.setText(docu.get("user_tele").toString());
-                        informationEditText.setText(docu.get("info").toString());
-                        careerEditText.setText(docu.get("career").toString());
+                        User user=docu.toObject(User.class);
+                        String userId=(String) docu.get("user_id");
+                        String name=user.getName();
+                        if(checkUser.equals(name)){
+                            db.collection("Resume").whereEqualTo("user_name", name).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        for(DocumentSnapshot doc:task.getResult()){
+                                            Log.d("userNmae===>", (String) doc.get("user_name"));
+                                            userName.setText((String)doc.get("user_name"));
+                                            userEmail.setText((String)doc.get("user_email"));
+                                            userTele.setText((String)doc.get("user_tele"));
+                                            informationEditText.setText((String)doc.get("info"));
+                                            careerEditText.setText((String)doc.get("career"));
+                                        }
+                                    }
+                                }
+                            });
+                        }
                     }
                 }
             }
