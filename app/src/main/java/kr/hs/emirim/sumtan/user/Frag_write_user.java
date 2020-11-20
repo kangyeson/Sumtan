@@ -111,10 +111,10 @@ public class Frag_write_user extends Fragment {
         resumeMap.put("user_email", currentUser.getEmail());
         resumeMap.put("timestamp", FieldValue.serverTimestamp());
 
-        db.collection("Resume").document(user_id).set(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+        db.collection("Resume").document(user_id).update(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getContext(), "이력서 수정 완료", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "이력서 업데이트 완료", Toast.LENGTH_SHORT).show();
                 information.setText(resume.getInfo());
                 career.setText(resume.getCareer());
             }

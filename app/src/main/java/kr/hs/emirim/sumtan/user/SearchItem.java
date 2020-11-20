@@ -22,9 +22,7 @@ public class SearchItem extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.search_item,container,false);
-
         submission_Button.setOnClickListener(this);
-
         return view;
     }
 
