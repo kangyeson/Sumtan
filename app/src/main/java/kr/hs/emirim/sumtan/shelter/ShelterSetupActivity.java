@@ -36,6 +36,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
     private String shelter_name;
     private String shelter_pre;
     private String shelter_address;
+    private String shelter_fsaddress;
 
     private FirebaseAuth firebaseAuth;
     private ArrayAdapter adapter;
@@ -90,6 +91,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -107,6 +109,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -124,6 +127,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -141,6 +145,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -158,6 +163,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -175,6 +181,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -192,6 +199,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -209,6 +217,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -226,6 +235,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -243,6 +253,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -260,6 +271,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -277,6 +289,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -294,6 +307,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -311,6 +325,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -328,6 +343,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -345,6 +361,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -362,6 +379,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -379,6 +397,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -396,6 +415,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -413,6 +433,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -430,6 +451,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -447,6 +469,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -464,6 +487,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -481,6 +505,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -498,6 +523,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -507,6 +533,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();   //item2에 스피너2(구) 값을 받아옴.
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
 
                         @Override
@@ -533,6 +560,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -549,6 +577,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -566,6 +595,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -583,6 +613,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -600,6 +631,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -617,6 +649,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -634,6 +667,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -651,6 +685,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -668,6 +703,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -685,6 +721,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -702,6 +739,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -719,6 +757,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -736,6 +775,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -753,6 +793,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -770,6 +811,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -787,6 +829,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -804,6 +847,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -821,6 +865,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -838,6 +883,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -855,6 +901,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -872,6 +919,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -889,6 +937,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -906,6 +955,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -923,6 +973,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -940,6 +991,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -957,6 +1009,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -974,6 +1027,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -991,6 +1045,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1008,6 +1063,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1025,6 +1081,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1042,6 +1099,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1059,6 +1117,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1076,6 +1135,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1093,6 +1153,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1110,6 +1171,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1127,6 +1189,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1144,6 +1207,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1161,6 +1225,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1178,6 +1243,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1195,6 +1261,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1212,6 +1279,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1229,6 +1297,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1238,6 +1307,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -1264,6 +1334,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1282,6 +1353,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1299,6 +1371,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1316,6 +1389,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1333,6 +1407,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1350,6 +1425,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1367,6 +1443,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1384,6 +1461,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1401,6 +1479,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1418,6 +1497,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1427,6 +1507,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -1452,6 +1533,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1470,6 +1552,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1487,6 +1570,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1504,6 +1588,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1521,6 +1606,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1538,6 +1624,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1555,6 +1642,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1572,6 +1660,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1589,6 +1678,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1606,6 +1696,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1623,6 +1714,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1640,6 +1732,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1657,6 +1750,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1674,6 +1768,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1691,6 +1786,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1708,6 +1804,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1725,6 +1822,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1742,6 +1840,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1751,6 +1850,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -1776,6 +1876,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1794,6 +1895,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1811,6 +1913,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1828,6 +1931,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1845,6 +1949,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1854,6 +1959,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -1879,6 +1985,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
                                     @Override
                                     public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1887,6 +1994,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -1912,6 +2020,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1930,6 +2039,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1947,6 +2057,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1964,6 +2075,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1981,6 +2093,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -1998,6 +2111,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2015,6 +2129,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2032,6 +2147,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2049,6 +2165,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2066,6 +2183,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2083,6 +2201,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2100,6 +2219,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2117,6 +2237,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2134,6 +2255,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2151,6 +2273,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2168,6 +2291,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2177,6 +2301,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -2202,6 +2327,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2220,6 +2346,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2237,6 +2364,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2254,6 +2382,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2271,6 +2400,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2288,6 +2418,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2305,6 +2436,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2322,6 +2454,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2339,6 +2472,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2356,6 +2490,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2373,6 +2508,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2390,6 +2526,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2407,6 +2544,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2424,6 +2562,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2433,6 +2572,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -2458,6 +2598,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2476,6 +2617,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2493,6 +2635,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2510,6 +2653,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2527,6 +2671,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2544,6 +2689,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2561,6 +2707,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2578,6 +2725,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2595,6 +2743,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2612,6 +2761,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2629,6 +2779,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2646,6 +2797,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2663,6 +2815,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2680,6 +2833,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2697,6 +2851,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2714,6 +2869,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2723,6 +2879,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -2748,6 +2905,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2766,6 +2924,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2783,6 +2942,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2800,6 +2960,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2817,6 +2978,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2826,6 +2988,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -2851,6 +3014,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2869,6 +3033,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2886,6 +3051,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2903,6 +3069,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2920,6 +3087,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2937,6 +3105,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2954,6 +3123,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2971,6 +3141,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -2988,6 +3159,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3005,6 +3177,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3022,6 +3195,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3039,6 +3213,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3056,6 +3231,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3073,6 +3249,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3090,6 +3267,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3107,6 +3285,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3124,6 +3303,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3141,6 +3321,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3158,6 +3339,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3175,6 +3357,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3192,6 +3375,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3209,6 +3393,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3218,6 +3403,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -3243,6 +3429,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3261,6 +3448,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3278,6 +3466,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3295,6 +3484,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3312,6 +3502,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3329,6 +3520,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3346,6 +3538,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3363,6 +3556,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3380,6 +3574,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3397,6 +3592,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3414,6 +3610,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3431,6 +3628,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3448,6 +3646,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3465,6 +3664,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3482,6 +3682,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3499,6 +3700,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3516,6 +3718,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3533,6 +3736,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3550,6 +3754,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3567,6 +3772,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3584,6 +3790,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3601,6 +3808,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3618,6 +3826,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3635,6 +3844,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3644,6 +3854,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -3669,6 +3880,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3687,6 +3899,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3704,6 +3917,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3721,6 +3935,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3738,6 +3953,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3755,6 +3971,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3772,6 +3989,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3789,6 +4007,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3798,6 +4017,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -3823,6 +4043,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3841,6 +4062,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3858,6 +4080,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3875,6 +4098,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3892,6 +4116,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3901,6 +4126,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -3926,6 +4152,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3944,6 +4171,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3961,6 +4189,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3978,6 +4207,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -3995,6 +4225,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4012,6 +4243,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4029,6 +4261,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4046,6 +4279,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4063,6 +4297,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4080,6 +4315,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4097,6 +4333,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4114,6 +4351,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4131,6 +4369,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4148,6 +4387,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4165,6 +4405,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4182,6 +4423,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4199,6 +4441,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4216,6 +4459,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4233,6 +4477,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4250,6 +4495,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4267,6 +4513,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4284,6 +4531,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4293,6 +4541,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -4318,6 +4567,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4336,6 +4586,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4353,6 +4604,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4370,6 +4622,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4387,6 +4640,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4404,6 +4658,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4421,6 +4676,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4438,6 +4694,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4455,6 +4712,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4472,6 +4730,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4489,6 +4748,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4506,6 +4766,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4523,6 +4784,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4540,6 +4802,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4557,6 +4820,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4566,6 +4830,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -4591,6 +4856,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4609,6 +4875,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                         item3 = spinner3[0].getSelectedItem().toString();   //item3에 스피너3(군구) 값을 받아옴.
                                         shelter_address = item1 + " "+ item2 + " " + item3;
+                                        shelter_fsaddress = item1 + " "+ item2;
                                     }
 
                                     @Override
@@ -4618,6 +4885,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                             }
                             item2 = spinner2[0].getSelectedItem().toString();
                             shelter_address = item1 + " "+ item2 + " " + item3;
+                            shelter_fsaddress = item1 + " "+ item2;
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -4649,13 +4917,14 @@ public class ShelterSetupActivity extends AppCompatActivity {
     private void adduser() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address,user_id);
+        Shelter shelter=new Shelter(shelter_name, shelter_tele, shelter_pre, shelter_address, shelter_fsaddress, user_id);
 
         Map<String, String> userMap = new HashMap<>();
         userMap.put("tele", shelter.getTele());
         userMap.put("sname", shelter.getSName());
         userMap.put("pre", shelter.getPre());
         userMap.put("address", shelter.getAddress());
+        userMap.put("fsaddress", shelter.getFsaddress());
         userMap.put("shelter_id", user_id);
 
         final String pre=shelter.getPre();

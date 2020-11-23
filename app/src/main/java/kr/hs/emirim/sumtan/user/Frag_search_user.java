@@ -47,7 +47,6 @@ public class Frag_search_user extends Fragment {
     private Button submission_Button;
     private FirestoreRecyclerAdapter adapter;
     private View view;
-
     private FirebaseAuth mAuth;
     FirebaseFirestore db=null;
     private FirebaseUser currentUser=null;
@@ -68,8 +67,12 @@ public class Frag_search_user extends Fragment {
         currentUser= mAuth.getCurrentUser();
 
         Query query = firebaseFirestore.collection("Users").orderBy("sname");
+        Query addressquery = firebaseFirestore.collection("Users").orderBy("fsaddress");
         FirestoreRecyclerOptions<Shelter> options = new FirestoreRecyclerOptions.Builder<Shelter>()
                 .setQuery(query, Shelter.class)
+                .build();
+        FirestoreRecyclerOptions<Shelter> addressoptions = new FirestoreRecyclerOptions.Builder<Shelter>()
+                .setQuery(addressquery, Shelter.class)
                 .build();
 
         adapter = new FirestoreRecyclerAdapter<Shelter, ShelterViewHolder>(options) {
@@ -138,15 +141,40 @@ public class Frag_search_user extends Fragment {
         search_icon_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                searchbtn.setOnClickListener(this);
-
+                search_icon_button.setOnClickListener(this);
             }
         });
 
         searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                searchbtn.setOnClickListener(this);
+                // 데이터를 다이얼로그로 보내는 코드
+                AddressCard addressCard = new AddressCard();
+                addressCard.show(getActivity().getSupportFragmentManager(),"tag");
+                addressCard.setDialogResult(new AddressCard.DialogResult() {
+                    @Override
+                    public void onClick(String addressForSearch) {
+                        //주소데이터 받아옴
+                        if(addressForSearch!=null){
+                            Query addressquery;
+                            Toast.makeText(getActivity(), "주소데이터 존재함: "+addressForSearch,
+                                    Toast.LENGTH_LONG). show();
+                            addressquery = firebaseFirestore.collection("Users")
+                                    .orderBy("fsaddress")
+                                    .startAt(addressForSearch).endAt(addressForSearch);
 
+                            Log.d(TAG, "query " + addressForSearch);
+                        }
+
+                        FirestoreRecyclerOptions<Shelter> addressoptions = new FirestoreRecyclerOptions.Builder<Shelter>()
+                                .setQuery(addressquery, Shelter.class)
+                                .build();
+
+                        adapter.updateOptions(addressoptions);
+                        }
+                    });
+                
             }
         });
 

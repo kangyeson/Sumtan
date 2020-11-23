@@ -30,7 +30,7 @@ public class SearchItem extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.submission_Button:
-                FragmentDialog dialog=new FragmentDialog();
+                //FragmentDialog dialog=new FragmentDialog();
                 //dialog.show();
                 break;
         }
