@@ -7,98 +7,92 @@
     android:orientation="vertical"
     tools:context=".user.Frag_home_user">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:src="@drawable/logo"
-        android:layout_gravity="center_horizontal"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ScrollView
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:textColorHint="#000000"
+            android:background="@drawable/icon_back"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="20dp"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+
+        <ScrollView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="90dp"
-            >
+            android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="50dp"
+                >
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+                <ImageButton
+                    android:id="@+id/ad1_shelter"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad1_shelter"/>
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+                <ImageButton
+                    android:id="@+id/ad2_shelter"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad2_su" />
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+                <ImageButton
+                    android:id="@+id/ad3_shelter"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad3_shelter"/>
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+                <ImageButton
+                    android:id="@+id/ad4_shelter"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad4_shelter"/>
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+        </ScrollView>
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
+        <WebView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"
+            android:id="@+id/wv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-        </LinearLayout>
-
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

@@ -7,98 +7,94 @@
     android:orientation="vertical"
     tools:context=".user.Frag_home_user">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:src="@drawable/logo"
-        android:layout_gravity="center_horizontal"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ScrollView
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColorHint="#000000"
+                android:background="@drawable/icon_back"
+                android:visibility="invisible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="20dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:src="@drawable/logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+
+        <ScrollView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/ad1_user"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad1_user" />
+
+                <ImageButton
+                    android:id="@+id/ad2_user"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad2_su" />
+
+                <ImageButton
+                    android:id="@+id/ad3_user"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad3_user" />
+
+                <ImageButton
+                    android:id="@+id/ad4_user"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad4_user" />
+
+                <ImageButton
+                    android:id="@+id/ad5_user"
+                    android:layout_width="300dp"
+                    android:layout_height="250dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/ad5_user" />
+            </LinearLayout>
+
+        </ScrollView>
+        <WebView
+            android:id="@+id/wv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="90dp"
-            >
+            android:visibility="invisible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="175dp"
-                android:text="광고"
-                android:background="#C4C4C4"
-                android:textSize="30sp"
-                android:layout_marginBottom="15dp"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
 
 </LinearLayout>
