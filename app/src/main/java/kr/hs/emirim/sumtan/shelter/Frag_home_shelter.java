@@ -23,10 +23,10 @@ import kr.hs.emirim.sumtan.R;
 public class Frag_home_shelter extends Fragment implements View.OnClickListener {
 
     private View view;
-    private ImageButton ad1_shelter;
     private ImageButton ad2_shelter;
     private ImageButton ad3_shelter;
     private ImageButton ad4_shelter;
+    private ImageButton ad5_shelter;
     private Button btn_back;
     private WebView wv;
 
@@ -36,10 +36,10 @@ public class Frag_home_shelter extends Fragment implements View.OnClickListener 
     {
         view = inflater.inflate(R.layout.activity_frag_home_shelter,container,false);
 
-        ad1_shelter=(ImageButton)view.findViewById(R.id.ad1_shelter);
         ad2_shelter=(ImageButton)view.findViewById(R.id.ad2_shelter);
         ad3_shelter=(ImageButton)view.findViewById(R.id.ad3_shelter);
         ad4_shelter=(ImageButton)view.findViewById(R.id.ad4_shelter);
+        ad5_shelter=(ImageButton)view.findViewById(R.id.ad5_shelter);
         btn_back=(Button)view.findViewById(R.id.btn_back);
         wv=view.findViewById(R.id.wv);
 
@@ -51,10 +51,10 @@ public class Frag_home_shelter extends Fragment implements View.OnClickListener 
             }
         });
 
-        ad1_shelter.setOnClickListener(this);
         ad2_shelter.setOnClickListener(this);
         ad3_shelter.setOnClickListener(this);
         ad4_shelter.setOnClickListener(this);
+        ad5_shelter.setOnClickListener(this);
 
         wv.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -89,10 +89,6 @@ public class Frag_home_shelter extends Fragment implements View.OnClickListener 
             }
         });
         switch (v.getId()){
-            case R.id.ad1_shelter:
-                address="https://www.animals.or.kr/report/print/53990";
-                wv.loadUrl(address);
-                break;
             case R.id.ad2_shelter:
                 address="https://secure.donus.org/animals/pay/step1_direct?dontype=P10101&period=pledge&price=20000&_ga=2.215230295.1369925755.1606368633-1914975462.1605673261&_gac=1.226724719.1606369265.CjwKCAiAnvj9BRA4EiwAuUMDf-BFeMN0KOnZN1HIghRQo8-NE-5ICWHjNqC3-2WaEKOgfrlLCi8bnRoCAucQAvD_BwE";
                 wv.loadUrl(address);
@@ -103,6 +99,10 @@ public class Frag_home_shelter extends Fragment implements View.OnClickListener 
                 break;
             case R.id.ad4_shelter:
                 address="https://www.animals.or.kr/report/print/39803";
+                wv.loadUrl(address);
+                break;
+            case R.id.ad5_shelter:
+                address="https://tumblbug.com/roartale?ref=discover";
                 wv.loadUrl(address);
                 break;
         }
