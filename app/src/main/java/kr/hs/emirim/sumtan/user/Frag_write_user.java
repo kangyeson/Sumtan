@@ -81,6 +81,10 @@ public class Frag_write_user extends Fragment {
                         user_id = currentUser.getUid();
                         modifyResume();
                     }
+                } else if(TextUtils.isEmpty(info) && TextUtils.isEmpty(car)){
+                    randomName= FieldValue.serverTimestamp().toString();
+                    user_id = currentUser.getUid();
+                    setmodifyResume();
                 }
             }
         });
@@ -99,6 +103,32 @@ public class Frag_write_user extends Fragment {
 
         }
 
+    }
+
+    private void setmodifyResume(){
+        Resume resume = new Resume(info, car);
+
+        Map<String, Object> resumeMap = new HashMap<>();
+        resumeMap.put("user_id", user_id);
+        resumeMap.put("info", resume.getInfo());
+        resumeMap.put("career", resume.getCareer());
+        resumeMap.put("user_email", currentUser.getEmail());
+        resumeMap.put("timestamp", FieldValue.serverTimestamp());
+
+        db.collection("Resume").document(user_id).set(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getContext(), "이력서 작성 완료", Toast.LENGTH_SHORT).show();
+                information.setText(resume.getInfo());
+                career.setText(resume.getCareer());
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(), "Firestore Error : "+e, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void modifyResume(){
