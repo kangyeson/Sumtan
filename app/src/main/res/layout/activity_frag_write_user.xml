@@ -50,6 +50,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/happylight"
                         android:textSize="35dp"
                         android:background="@null"/>
 
@@ -153,7 +155,7 @@
                             android:fontFamily="@font/bmhanna"
                             android:textColor="#000000"
                             android:padding="12dp"
-                            android:textSize="14sp"
+                            android:textSize="18sp"
                             android:layout_gravity="center_horizontal"
                             />
                     </LinearLayout>
@@ -190,8 +192,7 @@
                             android:background="@drawable/introduce_box"
                             android:inputType="textLongMessage"
                             android:padding="12dp"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/bmhanna"
+                            android:textSize="18sp"
                             android:textColor="#000000"
                             android:layout_gravity="center_horizontal"
                             />

@@ -154,7 +154,7 @@
                             android:background="@drawable/introduce_box"
                             android:inputType="textLongMessage"
                             android:padding="12dp"
-                            android:textSize="14dp"
+                            android:textSize="18sp"
                             android:layout_gravity="center_horizontal"
                             />
                     </LinearLayout>
@@ -191,7 +191,7 @@
                             android:background="@drawable/introduce_box"
                             android:inputType="textLongMessage"
                             android:padding="12dp"
-                            android:textSize="14dp"
+                            android:textSize="18sp"
                             android:layout_gravity="center_horizontal"
                             />
                     </LinearLayout>
