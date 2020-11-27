@@ -18,7 +18,6 @@
         <activity android:name=".shelter.ShelterSetupActivity" />
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".user.MainActivity" />
-        <activity android:name=".shelter.Modify_shelter"/>
         <activity android:name=".shelter.MainActivity_shelter"/>
         <activity android:name=".shelter.ShelterCdetailActivity"/>
         <activity android:name=".Register.LoginActivity">
