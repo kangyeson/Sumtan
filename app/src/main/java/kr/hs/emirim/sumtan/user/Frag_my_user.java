@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,6 @@ import kr.hs.emirim.sumtan.R;
 
 public class Frag_my_user extends Fragment implements View.OnClickListener {
 
-    private TextView apply;
     private TextView user_name;
     private Button btn_logout;
     private Button btn_remove;
@@ -43,6 +43,8 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
     private String shelterTele;
     private Button btn_call;
     private TextView btn_end;
+    private LinearLayout lay_shelter;
+    private LinearLayout lay_text;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db=null;
@@ -63,7 +65,6 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
 
         }
 
-        apply=(TextView)v.findViewById(R.id.apply);
         btn_logout=(Button)v.findViewById(R.id.btn_logout);
         user_name=(TextView)v.findViewById(R.id.user_name);
         btn_remove=(Button)v.findViewById(R.id.btn_remove);
@@ -148,6 +149,10 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
                     if(document.exists()){
                         String shelterID= (String) document.get("shelter_id");
                         if(shelterID!=null){
+                            lay_shelter= getView().findViewById(R.id.lay_shelter);
+                            lay_text=getView().findViewById(R.id.lay_text);
+                            lay_text.setVisibility(View.INVISIBLE);
+                            lay_shelter.setVisibility(View.VISIBLE);
                             db.collection("Users").whereEqualTo("NowResume", 1).whereEqualTo("shelter_id", shelterID).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {

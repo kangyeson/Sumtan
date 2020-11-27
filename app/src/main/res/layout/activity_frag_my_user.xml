@@ -5,13 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".user.Frag_my_user"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:padding="40dp">
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:layout_height="60dp"
+            android:src="@drawable/big_logo"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="40dp">
 
             <TextView
                 android:id="@+id/user_name"
@@ -21,102 +43,137 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="15dp">
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="#000000"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/apply"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/apply_dona"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/binggrraebold"
-            android:gravity="center_horizontal|center_vertical"
-            android:background="#D1BDAD"/>
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:orientation="vertical"-->
+        <!--        android:layout_height="wrap_content">-->
 
-    </LinearLayout>
+        <!--        <TextView-->
+        <!--            android:id="@+id/apply"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            android:text="@string/apply_dona"-->
+        <!--            android:textSize="20sp"-->
+        <!--            android:textColor="#000000"-->
+        <!--            android:fontFamily="@font/binggrraebold"-->
+        <!--            android:gravity="center_horizontal|center_vertical"-->
+        <!--            android:background="#D1BDAD"/>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        <!--    </LinearLayout>-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/lay_shelter"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_shelterName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/melonabold"
+                            android:textSize="30sp"
+                            android:text=""/>
+
+                        <Button
+                            android:id="@+id/btn_call"
+                            android:layout_width="30dp"
+                            android:background="@drawable/phone"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="30dp"
+                            android:layout_height="30dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btn_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/end_done"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center_horizontal"
+                        android:layout_height="match_parent"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:text="아직 신청한 보호소가 없습니다."/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_shelterName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:text="로그아웃"
+                android:fontFamily="@font/bmeuljiro"
+                android:background="@drawable/log_btn"
                 android:layout_gravity="center_vertical"
-                android:fontFamily="@font/melonabold"
-                android:textSize="30sp"
-                android:text=""/>
+                android:layout_margin="10dp"
+                android:textSize="18sp" />
 
             <Button
-                android:id="@+id/btn_call"
-                android:layout_width="30dp"
-                android:background="@drawable/phone"
+                android:id="@+id/btn_remove"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:text="회원탈퇴"
+                android:fontFamily="@font/bmeuljiro"
+                android:background="@drawable/log_btn"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_height="30dp"/>
+                android:layout_margin="10dp"
+                android:textSize="18sp" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/btn_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/end_done"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/account"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/binggrraebold"
-            android:gravity="center_horizontal|center_vertical"
-            android:background="#D1BDAD"/>
-
-        <Button
-            android:id="@+id/btn_remove"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#E3D6CC"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/delete_user"
-            android:textSize="15sp"/>
-
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="로그아웃"
-            android:background="#E3D6CC"
-            android:textSize="15sp"/>
-
 
     </LinearLayout>
 
