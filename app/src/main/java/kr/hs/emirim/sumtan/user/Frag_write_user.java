@@ -74,14 +74,36 @@ public class Frag_write_user extends Fragment {
             public void onClick(View v){
                 info=information.getText().toString();
                 car=career.getText().toString();
-
                 if(!TextUtils.isEmpty(info) && !TextUtils.isEmpty(car)){
-                    if(currentUser!=null) {
-                        randomName= FieldValue.serverTimestamp().toString();
-                        user_id = currentUser.getUid();
-                        modifyResume();
-                    }
+                    db.collection("Resume").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful()){
+                                DocumentSnapshot document=task.getResult();
+                                if(document.exists()){
+                                    String do_info=(String)document.get("info");
+                                    String do_career=(String)document.get("career");
+                                    Toast.makeText(getActivity(), "이력서 업데이트", Toast.LENGTH_SHORT).show();
+                                    modifyResume();
+                                }else{
+                                    Toast.makeText(getActivity(), "이력서 처음 등록", Toast.LENGTH_SHORT).show();
+                                    setmodifyResume();
+                                }
+                            }
+                        }
+                    });
+                }else{
+                    Toast.makeText(getActivity(), "소개, 경력 모두 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
+//
+//                if(!TextUtils.isEmpty(info) && !TextUtils.isEmpty(car)){
+//                    if(currentUser!=null) {
+//                        randomName= FieldValue.serverTimestamp().toString();
+//                        user_id = currentUser.getUid();
+//                        modifyResume();
+//                    }
+//                }
+
             }
         });
         return view;
@@ -105,10 +127,8 @@ public class Frag_write_user extends Fragment {
         Resume resume = new Resume(info, car);
 
         Map<String, Object> resumeMap = new HashMap<>();
-        resumeMap.put("user_id", user_id);
         resumeMap.put("info", resume.getInfo());
         resumeMap.put("career", resume.getCareer());
-        resumeMap.put("user_email", currentUser.getEmail());
         resumeMap.put("timestamp", FieldValue.serverTimestamp());
 
         db.collection("Resume").document(user_id).update(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -125,6 +145,34 @@ public class Frag_write_user extends Fragment {
                         Toast.makeText(getContext(), "Firestore Error : "+e, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void setmodifyResume(){
+        info=information.getText().toString();
+        car=career.getText().toString();
+        Resume resume = new Resume(info, car);
+
+        Map<String, Object> resumeMap = new HashMap<>();
+        resumeMap.put("user_id", user_id);
+        resumeMap.put("info", resume.getInfo());
+        resumeMap.put("career", resume.getCareer());
+        resumeMap.put("user_email", currentUser.getEmail());
+        resumeMap.put("timestamp", FieldValue.serverTimestamp());
+
+        db.collection("Resume").document(user_id).set(resumeMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(getContext(), "이력서 등록 완료", Toast.LENGTH_SHORT).show();
+                    information.setText(resume.getInfo());
+                    career.setText(resume.getCareer());
+                }else{
+                    String error=task.getException().getMessage();
+                    Toast.makeText(getActivity(), "Firestore Error : "+error, Toast.LENGTH_SHORT).show();
+                    Log.d("에러 : ", error);
+                }
+            }
+        });
     }
 
 
