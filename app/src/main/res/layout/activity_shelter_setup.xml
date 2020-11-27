@@ -25,12 +25,29 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#ffffff"
         >
+
+        <androidx.cardview.widget.CardView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="106dp"
+            android:layout_height="121dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="20dp">
+            <ImageView
+                android:id="@+id/shelter_ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#C4C4C4"
+                tools:srcCompat="@tools:sample/avatars"/>
+        </androidx.cardview.widget.CardView>
 
         <!--전화번호-->
         <LinearLayout
