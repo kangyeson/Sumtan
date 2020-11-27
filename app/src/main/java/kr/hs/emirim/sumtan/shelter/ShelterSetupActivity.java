@@ -4928,17 +4928,12 @@ public class ShelterSetupActivity extends AppCompatActivity {
         userMap.put("fsaddress", shelter.getFsaddress());
         userMap.put("shelter_id", user_id);
 
-        final String pre=shelter.getPre();
-
         db.collection("Users").document(user_id).set(shelter).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(ShelterSetupActivity.this, "유저 정보가 등록됨", Toast.LENGTH_SHORT).show();
-                    if(pre!=null){
-                        startActivity(new Intent(ShelterSetupActivity.this, LoginActivity.class));
-                        Toast.makeText(ShelterSetupActivity.this, "쉘터 메인으로! : "+pre, Toast.LENGTH_SHORT).show();
-                    }
+                    startActivity(new Intent(ShelterSetupActivity.this, LoginActivity.class));
                 } else {
                     String error = task.getException().getMessage();
                     Toast.makeText(ShelterSetupActivity.this, "Firestore Error : " + error, Toast.LENGTH_SHORT).show();
