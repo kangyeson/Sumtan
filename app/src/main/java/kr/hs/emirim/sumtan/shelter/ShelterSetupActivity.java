@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.Register.LoginActivity;
 
 public class ShelterSetupActivity extends AppCompatActivity {
 
@@ -4935,7 +4936,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(ShelterSetupActivity.this, "유저 정보가 등록됨", Toast.LENGTH_SHORT).show();
                     if(pre!=null){
-                        startActivity(new Intent(ShelterSetupActivity.this, MainActivity_shelter.class));
+                        startActivity(new Intent(ShelterSetupActivity.this, LoginActivity.class));
                         Toast.makeText(ShelterSetupActivity.this, "쉘터 메인으로! : "+pre, Toast.LENGTH_SHORT).show();
                     }
                 } else {

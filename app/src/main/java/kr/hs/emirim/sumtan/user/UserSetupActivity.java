@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import kr.hs.emirim.sumtan.R;
+import kr.hs.emirim.sumtan.Register.LoginActivity;
 
 public class UserSetupActivity extends AppCompatActivity {
 
@@ -76,7 +77,7 @@ public class UserSetupActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(UserSetupActivity.this, "유저 정보가 등록됨", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(UserSetupActivity.this, MainActivity.class));
+                    startActivity(new Intent(UserSetupActivity.this, LoginActivity.class));
                 }else{
                     String error=task.getException().getMessage();
                     Toast.makeText(UserSetupActivity.this, "Firestore Error : "+error, Toast.LENGTH_SHORT).show();

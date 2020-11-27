@@ -62,10 +62,19 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(RegisterActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
+                                    mAuth.getCurrentUser().sendEmailVerification()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(RegisterActivity.this, "회원가입 완료. 이메일 인증을 확인해주세요", Toast.LENGTH_SHORT).show();
 
-                                    startActivity(new Intent(RegisterActivity.this, ShelterSetupActivity.class));
-                                    finish();
+                                                        startActivity(new Intent(RegisterActivity.this, ShelterSetupActivity.class));
+                                                        finish();
+                                                    }
+                                                }
+                                            });
+
                                 }else{
                                     String errorMessage=task.getException().getMessage();
                                     Toast.makeText(RegisterActivity.this, "Error : "+errorMessage, Toast.LENGTH_SHORT).show();
@@ -94,10 +103,18 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(RegisterActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
+                                    mAuth.getCurrentUser().sendEmailVerification()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(RegisterActivity.this, "회원가입 완료. 이메일 인증을 확인해주세요", Toast.LENGTH_SHORT).show();
 
-                                    startActivity(new Intent(RegisterActivity.this, UserSetupActivity.class));
-                                    finish();
+                                                        startActivity(new Intent(RegisterActivity.this, UserSetupActivity.class));
+                                                        finish();
+                                                    }
+                                                }
+                                            });
                                 }else{
                                     String errorMessage=task.getException().getMessage();
                                     Toast.makeText(RegisterActivity.this, "Error : "+errorMessage, Toast.LENGTH_SHORT).show();

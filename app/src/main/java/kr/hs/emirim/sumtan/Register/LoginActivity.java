@@ -78,8 +78,15 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 currentUser=mAuth.getCurrentUser();
-                                user_id=currentUser.getUid();
-                                sendToMain(user_id);
+                                if(currentUser!=null && currentUser.isEmailVerified()){
+                                    currentUser=mAuth.getCurrentUser();
+                                    user_id=currentUser.getUid();
+                                    Toast.makeText(getApplicationContext(), "인증되었습니다." , Toast.LENGTH_SHORT).show();
+                                    sendToMain(user_id);
+                                }else{
+                                    Toast.makeText(getApplicationContext(), "메일로 보낸 링크를 확인해주세요." , Toast.LENGTH_SHORT).show();
+                                }
+
                             }else{
                                 String errorMessage=task.getException().getMessage();
                                 Toast.makeText(LoginActivity.this, "error : "+errorMessage, Toast.LENGTH_SHORT).show();
@@ -103,15 +110,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if(currentUser!=null){
+        currentUser=mAuth.getCurrentUser();
+
+        if(currentUser!=null && currentUser.isEmailVerified()){
+            currentUser=mAuth.getCurrentUser();
             user_id=currentUser.getUid();
             sendToMain(user_id);
-
-        }else{
-            //Toast.makeText(LoginActivity.this,"LoginActivity = > null", Toast.LENGTH_SHORT);
-
         }
-
     }
 
     private void sendToMain(String user_id) {
@@ -130,11 +135,11 @@ public class LoginActivity extends AppCompatActivity {
 
                         //Toast.makeText(LoginActivity.this, shelterPre, Toast.LENGTH_SHORT).show();
                         if(shelterPre!=null){
-                            //Toast.makeText(LoginActivity.this, shelterPre, Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, shelterPre+"님 환영합니다", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity_shelter.class));
                             finish();
                         }else if(userName!=null){
-                            Toast.makeText(LoginActivity.this, userName, Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, userName+"님 환영합니다", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         }
@@ -147,32 +152,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-//        db.collection("Users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//            @Override
-//            public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                UserInfo userInfo=documentSnapshot.toObject(UserInfo.class);
-//                Toast.makeText(LoginActivity.this, userInfo.getUserName(), Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-
-//        db.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                if(task.isSuccessful()){
-//                    DocumentSnapshot document=task.getResult();
-//                    if(document.exists()){
-//                        Toast.makeText(LoginActivity.this, "data : " +  document.getData(), Toast.LENGTH_LONG).show();
-//
-//                        Log.d("LOGINActivity => ", "data : "+document.getData());
-//                    }else{
-//                        Log.d("LOGINActivity=>", "No such document");
-//                    }
-//                }else{
-//                    Log.d("LOGINActivity => ", "get failed with ", task.getException());
-//                }
-//            }
-//        });
 
     }
 }
