@@ -28,7 +28,10 @@ public class Frag_home_user extends Fragment implements View.OnClickListener {
     private ImageButton ad2_user;
     private ImageButton ad3_user;
     private ImageButton ad4_user;
-    private ImageButton ad5_user;
+    private ImageButton ad6_user;
+    private ImageButton ad7_user;
+    private ImageButton ad8_user;
+    private ImageButton ad9_user;
     private Button btn_back;
     private WebView wv;
 
@@ -42,7 +45,10 @@ public class Frag_home_user extends Fragment implements View.OnClickListener {
         ad2_user=(ImageButton)view.findViewById(R.id.ad2_user);
         ad3_user=(ImageButton)view.findViewById(R.id.ad3_user);
         ad4_user=(ImageButton)view.findViewById(R.id.ad4_user);
-        ad5_user=(ImageButton)view.findViewById(R.id.ad5_user);
+        ad6_user=(ImageButton)view.findViewById(R.id.ad6_user);
+        ad7_user=(ImageButton)view.findViewById(R.id.ad7_user);
+        ad8_user=(ImageButton)view.findViewById(R.id.ad8_user);
+        ad9_user=(ImageButton)view.findViewById(R.id.ad9_user);
         btn_back=(Button)view.findViewById(R.id.btn_back);
 
         wv=view.findViewById(R.id.wv);
@@ -77,7 +83,10 @@ public class Frag_home_user extends Fragment implements View.OnClickListener {
         ad2_user.setOnClickListener(this);
         ad3_user.setOnClickListener(this);
         ad4_user.setOnClickListener(this);
-        ad5_user.setOnClickListener(this);
+        ad6_user.setOnClickListener(this);
+        ad7_user.setOnClickListener(this);
+        ad8_user.setOnClickListener(this);
+        ad9_user.setOnClickListener(this);
 
         return view;
     }
@@ -110,10 +119,23 @@ public class Frag_home_user extends Fragment implements View.OnClickListener {
                 address="https://www.youtube.com/watch?v=cyAE2oht71w";
                 wv.loadUrl(address);
                 break;
-            case R.id.ad5_user:
-                address="https://www.animals.or.kr/home/notice/53563";
+            case R.id.ad6_user:
+                address="https://www.youtube.com/watch?v=mRjO7Vs2-08";
                 wv.loadUrl(address);
                 break;
+            case R.id.ad7_user:
+                address="https://paju.ekara.org/#video-section";
+                wv.loadUrl(address);
+                break;
+            case R.id.ad8_user:
+                address="http://www.pawinhand.kr/goods/goods_list.php?cateCd=001";
+                wv.loadUrl(address);
+                break;
+            case R.id.ad9_user:
+                address="http://www.pawinhand.kr/main/html.php?htmid=service/statistics.html";
+                wv.loadUrl(address);
+                break;
+
         }
     }
 
