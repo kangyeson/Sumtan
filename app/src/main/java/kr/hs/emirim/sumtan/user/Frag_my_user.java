@@ -42,7 +42,6 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
     private String shelterName="";
     private String shelterTele;
     private Button btn_call;
-    private TextView btn_end;
     private LinearLayout lay_shelter;
     private LinearLayout lay_text;
 
@@ -70,7 +69,6 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
         btn_remove=(Button)v.findViewById(R.id.btn_remove);
         tv_shelterName=(TextView)v.findViewById(R.id.tv_shelterName);
         btn_call=(Button)v.findViewById(R.id.btn_call);
-        btn_end=(TextView)v.findViewById(R.id.btn_end);
 
         btn_logout.setOnClickListener(this);
         btn_remove.setOnClickListener(this);
@@ -82,48 +80,6 @@ public class Frag_my_user extends Fragment implements View.OnClickListener {
                 intent.setAction(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:"+shelterTele));
                 startActivity(intent);
-            }
-        });
-
-        DocumentReference userRef=db.collection("Users").document(user_id);
-
-        btn_end.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                db.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(task.isSuccessful()){
-                            DocumentSnapshot document=task.getResult();
-                            if(document.exists()){
-                                String nowResume= (String) document.get("NowResume");
-                                if(nowResume!=null){
-                                    if(Integer.parseInt(nowResume)==1){
-                                        db.collection("Users").whereEqualTo("NowResume",1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                if(task.isSuccessful()){
-                                                    for(DocumentSnapshot docu:task.getResult()){
-                                                        userRef.update("shelter_name", "");
-                                                        userRef.update("shelter_tele", "");
-                                                        userRef.update("shelter_id", "");
-                                                        userRef.update("NowResume", 0);
-                                                    }
-                                                    Toast.makeText(getActivity(), "재능 기부가 종료되었습니다", Toast.LENGTH_SHORT).show();
-                                                }
-                                            }
-                                        });
-                                    }else{
-                                        Toast.makeText(getActivity(), "먼저 재능기부할 보호소를 선택해주세요.", Toast.LENGTH_SHORT).show();
-                                    }
-                                }else{
-                                    Toast.makeText(getActivity(), "먼저 재능기부할 보호소를 선택해주세요.", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }
-
-                    }
-                });
             }
         });
 
