@@ -72,16 +72,26 @@ public class Frag_write_user extends Fragment {
         btn_write.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                info=information.getText().toString();
-                car=career.getText().toString();
-
-                if(!TextUtils.isEmpty(info) && !TextUtils.isEmpty(car)){
-                    if(currentUser!=null) {
-                        randomName= FieldValue.serverTimestamp().toString();
-                        user_id = currentUser.getUid();
-                        modifyResume();
-                    }
-                }
+//                info=information.getText().toString();
+//                car=career.getText().toString();
+//
+//                if(!TextUtils.isEmpty(info) && !TextUtils.isEmpty(car)){
+//                    if(currentUser!=null) {
+//                        randomName= FieldValue.serverTimestamp().toString();
+//                        user_id = currentUser.getUid();
+//                        modifyResume();
+//                    }
+//                }
+//                db.collection("Resume").whereEqualTo("user_name", user_name).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                        if(task.isSuccessful()){
+//                            for(DocumentSnapshot docu:task.getResult()){
+//
+//                            }
+//                        }
+//                    }
+//                });
             }
         });
         return view;
