@@ -1,13 +1,16 @@
 package kr.hs.emirim.sumtan.shelter;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,14 +23,25 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
+
+import java.util.UUID;
 
 import kr.hs.emirim.sumtan.Register.LoginActivity;
 import kr.hs.emirim.sumtan.R;
+
+import static android.app.Activity.RESULT_OK;
 
 public class Frag_my_shelter extends Fragment implements View.OnClickListener {
 
@@ -35,6 +49,16 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     private static final String TAG="My Tag";
     private FirebaseAuth mAuth;
     private FirebaseFirestore db=null;
+    private FirebaseStorage storage;
+    private DatabaseReference databaseReference;
+
+
+    private ImageView shelter_ImageView;
+    private Uri imageUri;
+    private String userUri="";
+    private StorageTask uploadTask;
+    private StorageReference storageReference;
+
 
     private String user_id;
     private TextView shelter_name;
@@ -43,6 +67,7 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     private TextView shelter_address;
     private Button btn_logout;
     private Button btn_remove;
+    private Button btn_proSave;
 
     private FirebaseUser currentUser=null;
 
@@ -51,29 +76,30 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.activity_frag_my_shelter,container,false);
-
         mAuth = FirebaseAuth.getInstance();
-
         db = FirebaseFirestore.getInstance();
-
         currentUser= mAuth.getCurrentUser();
+        storage = FirebaseStorage.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
-        Button iv_modify=(Button)view.findViewById(R.id.iv_modify);
+        shelter_ImageView = view.findViewById(R.id.shelter_ImageView);
         shelter_name=(TextView)view.findViewById(R.id.shelter_name);
         shelter_tele=(TextView)view.findViewById(R.id.shelter_tele);
         shelter_pre=(TextView)view.findViewById(R.id.shelter_pre);
         shelter_address=(TextView)view.findViewById(R.id.shelter_address);
 
-        iv_modify.setOnClickListener(new View.OnClickListener() {
+        shelter_ImageView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Modify_shelter.class));
+                choosePicture();
             }
         });
 
+        btn_proSave=(Button)view.findViewById(R.id.btn_proSave);
         btn_logout=(Button)view.findViewById(R.id.btn_logout);
         btn_remove=(Button)view.findViewById(R.id.btn_remove);
 
+        btn_proSave.setOnClickListener(this);
         btn_logout.setOnClickListener(this);
         btn_remove.setOnClickListener(this);
 
@@ -120,6 +146,8 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.btn_proSave:
+                uploadProfileImage();
             case R.id.btn_logout:
                 logout();
                 break;
@@ -129,6 +157,18 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
         }
     }
 
+
+    private void uploadProfileImage() {
+
+    }
+
+    private void choosePicture() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, 1);
+    }
+    
     private void logout() {
         mAuth.signOut();
         sendToLogin();
