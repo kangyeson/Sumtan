@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".shelter.Frag_my_shelter"
+    android:background="#ffffff"
     android:orientation="vertical"
     >
 
@@ -16,9 +17,10 @@
         >
 
         <ImageView
-            android:layout_width="80dp"
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
             android:layout_height="60dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo1"
             android:layout_gravity="center_horizontal"
             />
 
@@ -27,7 +29,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/myshelter"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,17 +53,20 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="50dp"
                 android:layout_width="106dp"
                 android:layout_height="121dp"
-                app:cardCornerRadius="20dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">
+                app:cardCornerRadius="20dp">
+
                 <ImageView
                     android:id="@+id/shelter_ImageView"
                     android:layout_width="match_parent"
@@ -71,11 +77,15 @@
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="0dp">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="30dp"
+                >
 
                 <LinearLayout
                     android:id="@+id/lay_tele"
@@ -156,39 +166,52 @@
             </LinearLayout>
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="15dp">
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="#000000"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_proSave"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="프로필 저장"
-            android:textStyle="bold"
-            android:background="@drawable/log_btn"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:textSize="15sp" />
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="로그아웃"
-            android:textStyle="bold"
-            android:background="@drawable/log_btn"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_remove"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="회원탈퇴"
-            android:textStyle="bold"
-            android:background="@drawable/log_btn"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:textSize="15sp" />
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:text="로그아웃"
+                android:fontFamily="@font/bmeuljiro"
+                android:background="@drawable/log_btn"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_remove"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:text="회원탈퇴"
+                android:fontFamily="@font/bmeuljiro"
+                android:background="@drawable/log_btn"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
