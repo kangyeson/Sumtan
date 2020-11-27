@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".Register.LoginActivity">
 
     <LinearLayout
@@ -23,40 +24,35 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:src="@drawable/splash"/>
+            android:layout_marginTop="50dp"
+            android:src="@drawable/big_logo"/>
 
         <LinearLayout
             android:id="@+id/layout_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:layout_margin="10dp"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center_horizontal"
-                    android:textSize="18dp"
-                    android:text="이메일"
-                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/login_email"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/unbee"
+                    android:hint="이메일"
                     android:background="@drawable/input_radius"
                     android:inputType="textEmailAddress"
                     android:padding="10dp"
@@ -70,18 +66,11 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="20dp"
-                    android:gravity="center_horizontal"
-                    android:text="비밀번호"
-                    android:textColor="#000000" />
-
                 <EditText
                     android:id="@+id/login_password"
                     android:layout_width="250dp"
+                    android:hint="비밀번호"
+                    android:fontFamily="@font/unbee"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/input_radius"
@@ -91,13 +80,13 @@
 
             <Button
                 android:id="@+id/login_btn"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/lj_radius"
-                android:fontFamily="@font/bazzi"
-                android:textSize="22dp"
+                android:fontFamily="@font/unbee"
+                android:textSize="20sp"
                 android:text="로그인" />
 
             <TextView
@@ -106,8 +95,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="22dp"
-                android:textSize="17dp"
-                android:fontFamily="@font/bazzi"
+                android:textSize="15sp"
+                android:fontFamily="@font/unbee"
                 android:text="@string/gojoin"
                 android:textColor="#000000" />
         </LinearLayout>
