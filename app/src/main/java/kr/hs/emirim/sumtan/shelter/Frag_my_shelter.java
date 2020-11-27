@@ -67,7 +67,6 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     private TextView shelter_address;
     private Button btn_logout;
     private Button btn_remove;
-    private Button btn_proSave;
 
     private FirebaseUser currentUser=null;
 
@@ -95,11 +94,9 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
             }
         });
 
-        btn_proSave=(Button)view.findViewById(R.id.btn_proSave);
         btn_logout=(Button)view.findViewById(R.id.btn_logout);
         btn_remove=(Button)view.findViewById(R.id.btn_remove);
 
-        btn_proSave.setOnClickListener(this);
         btn_logout.setOnClickListener(this);
         btn_remove.setOnClickListener(this);
 
@@ -146,8 +143,6 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_proSave:
-                uploadProfileImage();
             case R.id.btn_logout:
                 logout();
                 break;
