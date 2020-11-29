@@ -47,7 +47,7 @@ public class Frag_home_shelter extends Fragment implements View.OnClickListener 
 
         webSettings.setJavaScriptEnabled(true); wv.setWebViewClient(new WebViewClient(){ //페이지 로딩이 끝나면 호출됩니다.
             @Override public void onPageFinished(WebView view,String url){
-                Toast.makeText(getActivity(),"로딩 끝", Toast.LENGTH_SHORT).show();
+
             }
         });
 

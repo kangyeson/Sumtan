@@ -2,6 +2,7 @@ package kr.hs.emirim.sumtan.Register;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
         reg_btn_user=(Button)findViewById(R.id.reg_btn_user);
         reg_progress=(ProgressBar)findViewById(R.id.reg_progress);
 
+
         reg_btn_shelter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 }else{
                                     String errorMessage=task.getException().getMessage();
-                                    Toast.makeText(RegisterActivity.this, "Error : "+errorMessage, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "이메일을 다시 확인해주세요.", Toast.LENGTH_SHORT).show();
                                 }
                                 reg_progress.setVisibility(View.INVISIBLE);
                             }
@@ -117,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             });
                                 }else{
                                     String errorMessage=task.getException().getMessage();
-                                    Toast.makeText(RegisterActivity.this, "Error : "+errorMessage, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "이메일을 다시 확인해주세요.", Toast.LENGTH_SHORT).show();
                                 }
                                 reg_progress.setVisibility(View.INVISIBLE);
                             }

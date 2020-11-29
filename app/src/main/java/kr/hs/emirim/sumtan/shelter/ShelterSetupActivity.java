@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -68,7 +69,6 @@ public class ShelterSetupActivity extends AppCompatActivity {
         shelterName = (EditText) findViewById(R.id.shelterName);
         shelterPre = (EditText) findViewById(R.id.shelterPre);
         setup_btn = (Button) findViewById(R.id.setup_btn);
-
 
         if(firebaseAuth!=null){
             user_id=firebaseAuth.getUid();
@@ -4918,6 +4918,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
         setup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                shelterTele.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
                 shelter_tele = shelterTele.getText().toString();
                 shelter_name = shelterName.getText().toString();
                 shelter_pre = shelterPre.getText().toString();

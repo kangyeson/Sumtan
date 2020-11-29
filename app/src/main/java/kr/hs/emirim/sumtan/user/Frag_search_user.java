@@ -156,10 +156,8 @@ public class Frag_search_user extends Fragment {
                     @Override
                     public void onClick(String addressForSearch) {
                         //주소데이터 받아옴
+                        Query addressquery = null;
                         if(addressForSearch!=null){
-                            Query addressquery;
-                            Toast.makeText(getActivity(), "주소데이터 존재함: "+addressForSearch,
-                                    Toast.LENGTH_LONG). show();
                             addressquery = firebaseFirestore.collection("Users")
                                     .orderBy("fsaddress")
                                     .startAt(addressForSearch).endAt(addressForSearch);
@@ -172,9 +170,9 @@ public class Frag_search_user extends Fragment {
                                 .build();
 
                         adapter.updateOptions(addressoptions);
-                        }
-                    });
-                
+                    }
+                });
+
             }
         });
 

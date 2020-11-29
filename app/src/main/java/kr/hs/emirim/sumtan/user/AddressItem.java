@@ -57,13 +57,13 @@ public class AddressItem extends RecyclerView.Adapter<AddressItem.ViewHolder> im
             textAddress = itemView.findViewById(R.id.textAddress);
 
             itemView.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v){
-                   int position = getAdapterPosition();
-                   if(listeneer!=null){
-                       listeneer.onItemClick(ViewHolder.this, v, position);
-                   }
-               }
+                @Override
+                public void onClick(View v){
+                    int position = getAdapterPosition();
+                    if(listeneer!=null){
+                        listeneer.onItemClick(ViewHolder.this, v, position);
+                    }
+                }
             });
         }
         public void setItem(Address item) {

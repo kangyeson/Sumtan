@@ -73,12 +73,7 @@ public class AddressCard extends DialogFragment implements View.OnClickListener{
                 if (fragment != null) {
                     DialogFragment dialogFragment = (DialogFragment) fragment;
                     dialogResult.onClick(addressForSearch);
-                    Toast.makeText(getActivity(), "주소넘김: "+addressForSearch,
-                            Toast.LENGTH_LONG). show();
                     dialogFragment.dismiss();
-                } else if(adapter != null){
-                    Toast.makeText(getActivity(), "주소를 선택해주십시오",
-                            Toast.LENGTH_LONG). show();
                 }
             }
         });
