@@ -19,6 +19,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -52,14 +54,6 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
     private FirebaseStorage storage;
     private DatabaseReference databaseReference;
 
-
-    private ImageView shelter_ImageView;
-    private Uri imageUri;
-    private String userUri="";
-    private StorageTask uploadTask;
-    private StorageReference storageReference;
-
-
     private String user_id;
     private TextView shelter_name;
     private TextView shelter_tele;
@@ -79,20 +73,12 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
         db = FirebaseFirestore.getInstance();
         currentUser= mAuth.getCurrentUser();
         storage = FirebaseStorage.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
-        shelter_ImageView = view.findViewById(R.id.shelter_ImageView);
         shelter_name=(TextView)view.findViewById(R.id.shelter_name);
         shelter_tele=(TextView)view.findViewById(R.id.shelter_tele);
         shelter_pre=(TextView)view.findViewById(R.id.shelter_pre);
         shelter_address=(TextView)view.findViewById(R.id.shelter_address);
 
-        shelter_ImageView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                choosePicture();
-            }
-        });
 
         btn_logout=(Button)view.findViewById(R.id.btn_logout);
         btn_remove=(Button)view.findViewById(R.id.btn_remove);
@@ -126,6 +112,7 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
                         //User user=document.toObject(User.class);
                         Shelter shelter=document.toObject(Shelter.class);
 
+                        RequestOptions placeholderOption = new RequestOptions();
                         shelter_name.setText(shelter.getSName());
                         shelter_tele.setText(shelter.getTele());
                         shelter_pre.setText(shelter.getPre());
@@ -152,17 +139,6 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
         }
     }
 
-
-    private void uploadProfileImage() {
-
-    }
-
-    private void choosePicture() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 1);
-    }
     
     private void logout() {
         mAuth.signOut();

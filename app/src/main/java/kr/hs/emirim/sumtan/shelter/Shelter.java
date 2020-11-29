@@ -63,4 +63,5 @@ public class Shelter {
     public void setShelterid(String shelterid) {
         this.shelterid = shelterid;
     }
+
 }
