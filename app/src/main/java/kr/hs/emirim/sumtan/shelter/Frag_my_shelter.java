@@ -112,7 +112,6 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
                         //User user=document.toObject(User.class);
                         Shelter shelter=document.toObject(Shelter.class);
 
-                        RequestOptions placeholderOption = new RequestOptions();
                         shelter_name.setText(shelter.getSName());
                         shelter_tele.setText(shelter.getTele());
                         shelter_pre.setText(shelter.getPre());

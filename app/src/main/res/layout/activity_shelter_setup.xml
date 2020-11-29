@@ -47,9 +47,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_radius"
                 android:fontFamily="@font/unbee"
+                android:inputType="phone"
                 android:hint="전화번호"
                 android:padding="10dp"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:maxLength="13"/>
         </LinearLayout>
 
         <!--보호소명-->

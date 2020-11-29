@@ -2,6 +2,7 @@ package kr.hs.emirim.sumtan.user;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,7 @@ public class UserSetupActivity extends AppCompatActivity {
         setup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userTele.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
                 user_name=userName.getText().toString();
                 user_tele=userTele.getText().toString();
                 user_email=firebaseAuth.getCurrentUser().getEmail();
