@@ -81,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                                 if(currentUser!=null && currentUser.isEmailVerified()){
                                     currentUser=mAuth.getCurrentUser();
                                     user_id=currentUser.getUid();
-                                    Toast.makeText(getApplicationContext(), "인증되었습니다." , Toast.LENGTH_SHORT).show();
                                     sendToMain(user_id);
                                 }else{
                                     Toast.makeText(getApplicationContext(), "메일로 보낸 링크를 확인해주세요." , Toast.LENGTH_SHORT).show();

@@ -81,12 +81,8 @@ public class Frag_write_user extends Fragment {
                             if(task.isSuccessful()){
                                 DocumentSnapshot document=task.getResult();
                                 if(document.exists()){
-                                    String do_info=(String)document.get("info");
-                                    String do_career=(String)document.get("career");
-                                    Toast.makeText(getActivity(), "이력서 업데이트", Toast.LENGTH_SHORT).show();
                                     modifyResume();
                                 }else{
-                                    Toast.makeText(getActivity(), "이력서 처음 등록", Toast.LENGTH_SHORT).show();
                                     setmodifyResume();
                                 }
                             }
