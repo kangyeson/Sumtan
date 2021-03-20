@@ -197,7 +197,7 @@ public class Frag_search_user extends Fragment {
         DocumentReference userRef=db.collection("Users").document(user_id);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("이력서를 제출하시겠습니까?");
+        builder.setMessage("신청서를 제출하시겠습니까?");
         builder.setPositiveButton("아니오", new DialogInterface.OnClickListener() {
             @Override public void onClick(DialogInterface dialog, int which) {
                 //Toast.makeText(getContext(), "아니오 누름", Toast.LENGTH_SHORT).show();
