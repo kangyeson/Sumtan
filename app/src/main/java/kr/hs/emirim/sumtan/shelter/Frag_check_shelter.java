@@ -123,7 +123,9 @@ public class Frag_check_shelter extends Fragment {
                                 }
                             });
                             Intent intent=new Intent(getActivity(), ShelterCdetailActivity.class);
-                            intent.putExtra("checkName", user.getName());
+                            intent.putExtra("checkTele", user.getTele());
+//                            String checkid = user.getUserid();
+//                            Log.d("ch===>", checkid);
                             startActivity(intent);
 
                     }
