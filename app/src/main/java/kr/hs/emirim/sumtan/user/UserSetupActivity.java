@@ -58,7 +58,7 @@ public class UserSetupActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(user_name) && !TextUtils.isEmpty(user_tele)){
                     adduser();
-                }
+                }//
             }
         });
     }

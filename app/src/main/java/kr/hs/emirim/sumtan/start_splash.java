@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import kr.hs.emirim.sumtan.Register.LoginActivity;
 
-public class start_splash extends AppCompatActivity {
+public class start_splash extends AppCompatActivity {//
 
     public void onAttachedToWindow() {
         super.onAttachedToWindow();

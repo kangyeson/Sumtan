@@ -4,7 +4,7 @@ public class Resume {
     private String info;
     private String career;
 
-    public Resume(){
+    public Resume(){//
 
     }
 

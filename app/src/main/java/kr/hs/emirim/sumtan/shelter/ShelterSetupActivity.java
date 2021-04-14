@@ -4913,7 +4913,7 @@ public class ShelterSetupActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });//
 
         setup_btn.setOnClickListener(new View.OnClickListener() {
             @Override

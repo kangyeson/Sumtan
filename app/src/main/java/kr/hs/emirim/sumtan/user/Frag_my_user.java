@@ -32,7 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import kr.hs.emirim.sumtan.Register.LoginActivity;
 import kr.hs.emirim.sumtan.R;
 
-public class Frag_my_user extends Fragment implements View.OnClickListener {
+public class Frag_my_user extends Fragment implements View.OnClickListener {//
 
     private TextView user_name;
     private Button btn_logout;

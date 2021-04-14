@@ -10,7 +10,7 @@ public class MainData_check {
         this.iv_bookmark = iv_bookmark;
         this.iv_profile = iv_profile;
         this.tv_name = tv_name;
-        this.tv_tele = tv_tele;
+        this.tv_tele = tv_tele;//
     }
 
     public int getIv_bookmark() {

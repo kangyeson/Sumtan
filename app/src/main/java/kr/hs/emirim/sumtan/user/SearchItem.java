@@ -15,7 +15,7 @@ import kr.hs.emirim.sumtan.R;
 public class SearchItem extends Fragment implements View.OnClickListener {
 
     private View view;
-    private Button submission_Button;
+    private Button submission_Button;//
 
     @Nullable
     @Override

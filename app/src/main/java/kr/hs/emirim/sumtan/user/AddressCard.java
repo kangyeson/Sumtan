@@ -112,7 +112,7 @@ public class AddressCard extends DialogFragment implements View.OnClickListener{
                 adapter.addItem(new Address("중구"));
                 adapter.addItem(new Address("중랑구"));
 
-                recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(adapter);//
                 adapter.setItemClickListeneer(new AddressItemClickListeneer() {
                     @Override
                     public void onItemClick(AddressItem.ViewHolder holder, View view, int position) {

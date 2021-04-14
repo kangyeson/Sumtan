@@ -54,7 +54,7 @@ public class Frag_home_shelter extends Fragment implements View.OnClickListener 
         ad2_shelter.setOnClickListener(this);
         ad3_shelter.setOnClickListener(this);
         ad4_shelter.setOnClickListener(this);
-        ad5_shelter.setOnClickListener(this);
+        ad5_shelter.setOnClickListener(this);//
 
         wv.setOnKeyListener(new View.OnKeyListener() {
             @Override

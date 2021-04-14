@@ -29,7 +29,7 @@ import kr.hs.emirim.sumtan.shelter.Shelter;
 import kr.hs.emirim.sumtan.user.MainActivity;
 import kr.hs.emirim.sumtan.user.User;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {//
 
     FirebaseFirestore db= null;
 

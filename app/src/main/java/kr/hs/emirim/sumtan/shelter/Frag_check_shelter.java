@@ -33,7 +33,7 @@ import kr.hs.emirim.sumtan.user.User;
 
 public class Frag_check_shelter extends Fragment {
 
-    private RecyclerView FirestoreList;
+    private RecyclerView FirestoreList;//
     private View view;
     private FragmentManager fm;
     private FragmentTransaction ft;

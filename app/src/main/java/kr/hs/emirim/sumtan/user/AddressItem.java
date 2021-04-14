@@ -45,7 +45,7 @@ public class AddressItem extends RecyclerView.Adapter<AddressItem.ViewHolder> im
     public void onItemClick(ViewHolder holder, View view, int position){
         if(listeneer != null){
             listeneer.onItemClick(holder, view, position);
-        }
+        }//
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{

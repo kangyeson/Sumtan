@@ -31,7 +31,7 @@ import java.util.Map;
 
 import kr.hs.emirim.sumtan.R;
 
-public class Frag_write_user extends Fragment {
+public class Frag_write_user extends Fragment {//
 
     private View view;
 

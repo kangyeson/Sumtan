@@ -136,7 +136,7 @@ public class Frag_search_user extends Fragment {
 
                 adapter.updateOptions(options);
             }
-        });
+        });//
 
         search_icon_button.setOnClickListener(new View.OnClickListener(){
             @Override

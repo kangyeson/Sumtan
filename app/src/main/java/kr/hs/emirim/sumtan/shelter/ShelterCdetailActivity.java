@@ -29,7 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import kr.hs.emirim.sumtan.R;
 import kr.hs.emirim.sumtan.user.User;
 
-public class ShelterCdetailActivity extends AppCompatActivity {
+public class ShelterCdetailActivity extends AppCompatActivity {//
 
     private View view;
     private FirebaseAuth mAuth;

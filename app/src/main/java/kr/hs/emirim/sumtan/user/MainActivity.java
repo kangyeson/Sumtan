@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import kr.hs.emirim.sumtan.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {//커밋필수
     private BottomNavigationView bottomNavigationView; // 바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;

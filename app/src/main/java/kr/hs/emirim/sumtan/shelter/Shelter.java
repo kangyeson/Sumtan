@@ -18,7 +18,7 @@ public class Shelter {
         this.address = address;
         this.fsaddress = fsaddress;
         this.shelterid=shelterid;
-    }
+    }//
 
     public String getSName() {
         return sname;

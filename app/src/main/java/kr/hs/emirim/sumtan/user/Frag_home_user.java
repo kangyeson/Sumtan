@@ -21,7 +21,7 @@ import androidx.fragment.app.Fragment;
 
 import kr.hs.emirim.sumtan.R;
 
-public class Frag_home_user extends Fragment implements View.OnClickListener {
+public class Frag_home_user extends Fragment implements View.OnClickListener {//
 
     private View view;
     private ImageButton ad1_user;

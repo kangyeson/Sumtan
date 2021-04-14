@@ -148,7 +148,7 @@ public class Frag_my_shelter extends Fragment implements View.OnClickListener {
                 })
                 .create();
         dialog.show();
-    }
+    }//
 
     private void deleteAccount() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

@@ -62,7 +62,7 @@ public class MainActivity_shelter extends AppCompatActivity {
     private void setFrag(int n) {
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
-        switch (n) {
+        switch (n) {//
             case 0:
                 ft.replace(R.id.main_frame, fh);
                 ft.commit();

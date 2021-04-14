@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
         reg_progress=(ProgressBar)findViewById(R.id.reg_progress);
 
 
-        reg_btn_shelter.setOnClickListener(new View.OnClickListener() {
+        reg_btn_shelter.setOnClickListener(new View.OnClickListener() {//
             @Override
             public void onClick(View v) {
                 String email=reg_email_field.getText().toString();
