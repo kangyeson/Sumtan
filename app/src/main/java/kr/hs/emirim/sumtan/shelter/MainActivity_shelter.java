@@ -86,7 +86,7 @@ public class MainActivity_shelter extends AppCompatActivity {
         if(currentUser==null){
             sendToLogin();
         }else{
-            Toast.makeText(MainActivity_shelter.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
+
         }
     }
 

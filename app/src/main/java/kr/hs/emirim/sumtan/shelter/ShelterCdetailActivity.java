@@ -54,7 +54,7 @@ public class ShelterCdetailActivity extends AppCompatActivity {//
         currentUser= mAuth.getCurrentUser();
         db= FirebaseFirestore.getInstance();
 
-        String checkUser=getIntent().getStringExtra("checkName");
+        String checkUser=getIntent().getStringExtra("checkTele");
         Log.d("checkUser=====>", checkUser);
 
         if(currentUser!=null){
@@ -78,9 +78,9 @@ public class ShelterCdetailActivity extends AppCompatActivity {//
                 if(task.isSuccessful()){
                     for(DocumentSnapshot docu:task.getResult()){
                         User user=docu.toObject(User.class);
-                        String name=user.getName();
-                        if(checkUser.equals(name)){
-                            db.collection("Resume").whereEqualTo("user_name", name).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        String tele=user.getTele();
+                        if(checkUser.equals(tele)){
+                            db.collection("Resume").whereEqualTo("user_tele", tele).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if(task.isSuccessful()){

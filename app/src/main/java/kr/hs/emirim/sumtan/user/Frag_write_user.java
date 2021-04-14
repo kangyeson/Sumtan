@@ -130,7 +130,7 @@ public class Frag_write_user extends Fragment {//
         db.collection("Resume").document(user_id).update(resumeMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getContext(), "이력서 업데이트 완료", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "신청서 업데이트 완료", Toast.LENGTH_SHORT).show();
                 information.setText(resume.getInfo());
                 career.setText(resume.getCareer());
             }
@@ -159,7 +159,7 @@ public class Frag_write_user extends Fragment {//
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getContext(), "이력서 등록 완료", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "신청서 등록 완료", Toast.LENGTH_SHORT).show();
                     information.setText(resume.getInfo());
                     career.setText(resume.getCareer());
                 }else{
